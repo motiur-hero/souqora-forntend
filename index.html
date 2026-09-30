@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Souqora - Your Smart Online Shopping Destination</title>
+<meta name="description" content="Souqora is your smart online shopping destination. Discover quality beauty, electronics, fashion, home, health, kitchen and personal care products at great prices with fast delivery and easy WhatsApp ordering.">
+<meta name="theme-color" content="#0e3b38">
+<link rel="icon" href="images/logo/souqora-logo.svg" type="image/svg+xml">
+<!-- Tailwind CSS pinned to version 3.4.16 (no build step needed) -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink: "#0e2a28", saffron: "#e8a33d", brand: "#0e3b38" },
+  fontFamily: { display: ["Georgia", "Cambria", "Times New Roman", "serif"] } } } };
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<!-- ================================= -->
+<!-- SOUQORA EASY EDIT SETTINGS -->
+<!-- Change the values below (data-... attributes). They update the whole website. -->
+<!-- ================================= -->
+<!-- EDIT: STORE NAME | EDIT: WEBSITE URL | EDIT: EMAIL ADDRESS | EDIT: WHATSAPP NUMBER (digits only, with country code) -->
+<!-- EDIT: BKASH NUMBER | EDIT: FACEBOOK URL | EDIT: INSTAGRAM URL | EDIT: YOUTUBE URL -->
+<div id="settings" hidden
+  data-store="Souqora"
+  data-site="souqora.live"
+  data-email="motiurfreelancer1@gmail.com"
+  data-whatsapp="966572465918"
+  data-whatsapp-display="+966572465918"
+  data-bkash="01872818201"
+  data-facebook="https://www.facebook.com/profile.php?id=61591979337214"
+  data-instagram="https://www.instagram.com/souqora.live/"
+  data-youtube="https://www.youtube.com/"
+  data-currency="SAR"></div>
+
+<a href="#shop" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[100] focus:bg-white focus:p-2">Skip to products</a>
+
+<!-- TOP PROMOTIONAL MARQUEE (moves right to left) -->
+<div class="bg-ink text-white text-sm overflow-hidden" role="region" aria-label="Promotions">
+  <div id="marquee" class="marquee-track">
+    <!-- EDIT: OFFER MARQUEE TEXT -->
+    <span class="mq-item">🔥 Special Offer • Free Delivery • Up to 50% Off • Limited Time Offer • Shop Now 🔥</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="home" class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+    <a href="#home" class="flex items-center gap-2" aria-label="Souqora home">
+      <img src="images/logo/souqora-logo.svg" alt="Souqora logo" width="36" height="36" class="h-9 w-9">
+      <span class="font-display text-2xl font-bold text-brand">Souqora</span>
+    </a>
+    <nav class="hidden md:block" aria-label="Main navigation">
+      <ul class="flex items-center gap-8 font-medium">
+        <li><a class="nav-link" href="#home">Home</a></li><li><a class="nav-link" href="#shop">Shop</a></li>
+        <li><a class="nav-link" href="#categories">Categories</a></li><li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="flex items-center gap-1">
+      <button id="search-toggle" class="icon-btn" aria-label="Search products"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+      <button id="cart-open" class="icon-btn relative" aria-label="Open cart"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.4 12.2a2 2 0 002 1.6h7.7a2 2 0 002-1.5L21 8H6"/><circle cx="10" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+        <span id="cart-count" class="absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-rose-600 px-1 text-[11px] font-bold text-white">0</span></button>
+      <button id="menu-toggle" class="icon-btn md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div id="search-bar" class="hidden border-t border-slate-200 bg-white px-4 py-3">
+    <label for="search-input" class="sr-only">Search products</label>
+    <input id="search-input" type="search" placeholder="Search by product name, category or description" class="mx-auto block w-full max-w-2xl rounded-full border border-slate-300 px-5 py-2.5 focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30">
+  </div>
+  <nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white md:hidden" aria-label="Mobile navigation">
+    <ul class="flex flex-col px-4 py-2 font-medium">
+      <li><a class="block py-3 border-b border-slate-100" href="#home">Home</a></li><li><a class="block py-3 border-b border-slate-100" href="#shop">Shop</a></li>
+      <li><a class="block py-3 border-b border-slate-100" href="#categories">Categories</a></li><li><a class="block py-3 border-b border-slate-100" href="#about">About</a></li>
+      <li><a class="block py-3" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="relative isolate overflow-hidden bg-brand" aria-labelledby="hero-title">
+  <!-- EDIT: HERO BANNER IMAGE -->
+  <img src="images/banners/hero-banner.jpg" alt="Souqora shopping banner" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-40" width="1600" height="900" fetchpriority="high">
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:py-28 lg:py-36">
+    <h1 id="hero-title" class="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl max-w-2xl">Shop Smarter. Live Better.</h1>
+    <p class="mt-5 max-w-xl text-lg text-teal-50">Discover quality products at great prices, all in one place.</p>
+    <a href="#shop" class="mt-8 inline-block rounded-full bg-saffron px-8 py-3.5 font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl">Shop Now</a>
+  </div>
+</section>
+
+<!-- CATEGORY SLIDER -->
+<section id="categories" class="mx-auto max-w-7xl px-4 py-14" aria-labelledby="cat-title">
+  <div class="mb-6 flex items-end justify-between">
+    <h2 id="cat-title" class="font-display text-3xl font-bold text-ink">Shop by Category</h2>
+    <div class="flex gap-2">
+      <button id="cat-prev" class="slider-btn" aria-label="Previous categories"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+      <button id="cat-next" class="slider-btn" aria-label="Next categories"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div id="cat-track" class="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2">
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="beauty" aria-label="Shop Beauty">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/beauty.jpg" alt="Beauty category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Beauty</span>
+    </button>
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="electronics" aria-label="Shop Electronics">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/electronics.jpg" alt="Electronics category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Electronics</span>
+    </button>
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="fashion" aria-label="Shop Fashion">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/fashion.jpg" alt="Fashion category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Fashion</span>
+    </button>
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="home" aria-label="Shop Home & Living">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/home.jpg" alt="Home & Living category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Home & Living</span>
+    </button>
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="health" aria-label="Shop Health">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/health.jpg" alt="Health category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Health</span>
+    </button>
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="accessories" aria-label="Shop Accessories">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/accessories.jpg" alt="Accessories category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Accessories</span>
+    </button>
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="kitchen" aria-label="Shop Kitchen">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/kitchen.jpg" alt="Kitchen category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Kitchen</span>
+    </button>
+<button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="personal-care" aria-label="Shop Personal Care">
+      <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
+        <!-- EDIT: CATEGORY IMAGE -->
+        <img src="images/categories/personal-care.jpg" alt="Personal Care category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
+      </div>
+      <!-- EDIT: CATEGORY NAME -->
+      <span class="mt-3 block font-semibold text-ink">Personal Care</span>
+    </button>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="mx-auto max-w-7xl px-4 pb-16 scroll-mt-20" aria-labelledby="shop-title">
+  <h2 id="shop-title" class="font-display text-3xl font-bold text-ink">Our Products</h2>
+  <div id="filters" class="no-scrollbar mt-5 flex gap-2 overflow-x-auto pb-2" role="group" aria-label="Filter products by category">
+<button class="filter-btn is-active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="beauty">Beauty</button>
+<button class="filter-btn" data-filter="electronics">Electronics</button>
+<button class="filter-btn" data-filter="fashion">Fashion</button>
+<button class="filter-btn" data-filter="home">Home</button>
+<button class="filter-btn" data-filter="health">Health</button>
+<button class="filter-btn" data-filter="accessories">Accessories</button>
+<button class="filter-btn" data-filter="kitchen">Kitchen</button>
+<button class="filter-btn" data-filter="personal-care">Personal Care</button>
+  </div>
+  <p id="result-count" class="mt-3 text-sm text-slate-600" aria-live="polite"></p>
+  <p id="no-results" class="hidden py-16 text-center text-lg font-medium text-slate-600">No products found.</p>
+  <div id="product-grid" class="mt-4 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+
+<!-- ================================= -->
+<!-- BEAUTY PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== BEAUTY PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-01" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Rose Glow Face Serum">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/beauty/beauty-01-main.jpg" alt="Rose Glow Face Serum" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/beauty/beauty-01-hover.jpg" alt="Rose Glow Face Serum - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Rose Glow Face Serum</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Rose Glow Face Serum: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">412</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,290</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,720</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== BEAUTY PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-02" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Velvet Matte Lipstick Set">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/beauty/beauty-02-main.jpg" alt="Velvet Matte Lipstick Set" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/beauty/beauty-02-hover.jpg" alt="Velvet Matte Lipstick Set - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Velvet Matte Lipstick Set</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Velvet Matte Lipstick Set: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">28</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳990</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,410</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== BEAUTY PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-03" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Hydrating Day Cream SPF 30">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/beauty/beauty-03-main.jpg" alt="Hydrating Day Cream SPF 30" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/beauty/beauty-03-hover.jpg" alt="Hydrating Day Cream SPF 30 - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Hydrating Day Cream SPF 30</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Hydrating Day Cream SPF 30: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">232</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,150</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,770</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== BEAUTY PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-04" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/beauty/beauty-04-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/beauty/beauty-04-hover.jpg" alt="Pro Makeup Brush Kit - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Pro Makeup Brush Kit</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Pro Makeup Brush Kit: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">350</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,480</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== BEAUTY PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-05" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Argan Repair Hair Oil">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/beauty/beauty-05-main.jpg" alt="Argan Repair Hair Oil" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/beauty/beauty-05-hover.jpg" alt="Argan Repair Hair Oil - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Argan Repair Hair Oil</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Argan Repair Hair Oil: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">355</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳850</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,700</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== BEAUTY PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-06" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Vitamin C Brightening Mask">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/beauty/beauty-06-main.jpg" alt="Vitamin C Brightening Mask" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/beauty/beauty-06-hover.jpg" alt="Vitamin C Brightening Mask - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Vitamin C Brightening Mask</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Vitamin C Brightening Mask: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">377</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳720</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳900</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ================================= -->
+<!-- ELECTRONICS PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== ELECTRONICS PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-01" data-category="electronics">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Wireless Earbuds Pro">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/electronics/electronics-01-main.jpg" alt="Wireless Earbuds Pro" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/electronics/electronics-01-hover.jpg" alt="Wireless Earbuds Pro - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Wireless Earbuds Pro</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Wireless Earbuds Pro: Reliable performance and modern design, backed by quality components for daily use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">425</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,990</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,740</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ELECTRONICS PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-02" data-category="electronics">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Smart Fitness Watch">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/electronics/electronics-02-main.jpg" alt="Smart Fitness Watch" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/electronics/electronics-02-hover.jpg" alt="Smart Fitness Watch - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Smart Fitness Watch</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Smart Fitness Watch: Reliable performance and modern design, backed by quality components for daily use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">346</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳3,890</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳5,190</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ELECTRONICS PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-03" data-category="electronics">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: 20000mAh Power Bank">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/electronics/electronics-03-main.jpg" alt="20000mAh Power Bank" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/electronics/electronics-03-hover.jpg" alt="20000mAh Power Bank - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>20000mAh Power Bank</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">20000mAh Power Bank: Reliable performance and modern design, backed by quality components for daily use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">147</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,890</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,700</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ELECTRONICS PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-04" data-category="electronics">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Bluetooth Speaker Mini">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/electronics/electronics-04-main.jpg" alt="Bluetooth Speaker Mini" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/electronics/electronics-04-hover.jpg" alt="Bluetooth Speaker Mini - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Bluetooth Speaker Mini</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Bluetooth Speaker Mini: Reliable performance and modern design, backed by quality components for daily use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">305</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,290</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,520</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ELECTRONICS PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-05" data-category="electronics">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: 65W Fast Charger">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/electronics/electronics-05-main.jpg" alt="65W Fast Charger" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/electronics/electronics-05-hover.jpg" alt="65W Fast Charger - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>65W Fast Charger</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">65W Fast Charger: Reliable performance and modern design, backed by quality components for daily use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">301</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,390</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,320</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ELECTRONICS PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-06" data-category="electronics">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: HD Webcam 1080p">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/electronics/electronics-06-main.jpg" alt="HD Webcam 1080p" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/electronics/electronics-06-hover.jpg" alt="HD Webcam 1080p - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>HD Webcam 1080p</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">HD Webcam 1080p: Reliable performance and modern design, backed by quality components for daily use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.2 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.2</span><span class="text-slate-500">(<span class="p-reviews">187</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳4,980</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ================================= -->
+<!-- FASHION PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== FASHION PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-01" data-category="fashion">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Classic Cotton Polo">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/fashion/fashion-01-main.jpg" alt="Classic Cotton Polo" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/fashion/fashion-01-hover.jpg" alt="Classic Cotton Polo - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Classic Cotton Polo</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Classic Cotton Polo: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">166</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,290</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,840</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== FASHION PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-02" data-category="fashion">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Slim Fit Denim Jeans">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/fashion/fashion-02-main.jpg" alt="Slim Fit Denim Jeans" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/fashion/fashion-02-hover.jpg" alt="Slim Fit Denim Jeans - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Slim Fit Denim Jeans</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Slim Fit Denim Jeans: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">38</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,190</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,370</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== FASHION PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-03" data-category="fashion">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Everyday Hoodie">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/fashion/fashion-03-main.jpg" alt="Everyday Hoodie" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/fashion/fashion-03-hover.jpg" alt="Everyday Hoodie - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Everyday Hoodie</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Everyday Hoodie: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">223</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,890</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,150</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== FASHION PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-04" data-category="fashion">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Summer Linen Shirt">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/fashion/fashion-04-main.jpg" alt="Summer Linen Shirt" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/fashion/fashion-04-hover.jpg" alt="Summer Linen Shirt - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Summer Linen Shirt</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Summer Linen Shirt: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.2 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.2</span><span class="text-slate-500">(<span class="p-reviews">39</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,590</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,180</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== FASHION PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-05" data-category="fashion">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Casual Canvas Sneakers">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/fashion/fashion-05-main.jpg" alt="Casual Canvas Sneakers" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/fashion/fashion-05-hover.jpg" alt="Casual Canvas Sneakers - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Casual Canvas Sneakers</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Casual Canvas Sneakers: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">181</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,110</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== FASHION PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-06" data-category="fashion">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Lightweight Bomber Jacket">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/fashion/fashion-06-main.jpg" alt="Lightweight Bomber Jacket" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/fashion/fashion-06-hover.jpg" alt="Lightweight Bomber Jacket - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Lightweight Bomber Jacket</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Lightweight Bomber Jacket: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.8 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.8</span><span class="text-slate-500">(<span class="p-reviews">475</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳3,190</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳4,250</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ================================= -->
+<!-- HOME & LIVING PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== HOME & LIVING PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-01" data-category="home">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Ceramic Table Lamp">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/home/home-01-main.jpg" alt="Ceramic Table Lamp" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/home/home-01-hover.jpg" alt="Ceramic Table Lamp - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Ceramic Table Lamp</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Ceramic Table Lamp: Adds warmth and function to any room with a clean look that suits modern homes.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">433</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,990</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,980</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HOME & LIVING PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-02" data-category="home">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Soft Knit Throw Blanket">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/home/home-02-main.jpg" alt="Soft Knit Throw Blanket" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/home/home-02-hover.jpg" alt="Soft Knit Throw Blanket - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Soft Knit Throw Blanket</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Soft Knit Throw Blanket: Adds warmth and function to any room with a clean look that suits modern homes.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">171</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,690</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,110</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HOME & LIVING PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-03" data-category="home">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Minimal Wall Clock">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/home/home-03-main.jpg" alt="Minimal Wall Clock" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/home/home-03-hover.jpg" alt="Minimal Wall Clock - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Minimal Wall Clock</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Minimal Wall Clock: Adds warmth and function to any room with a clean look that suits modern homes.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.8 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.8</span><span class="text-slate-500">(<span class="p-reviews">50</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,190</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,590</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HOME & LIVING PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-04" data-category="home">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Woven Storage Baskets">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/home/home-04-main.jpg" alt="Woven Storage Baskets" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/home/home-04-hover.jpg" alt="Woven Storage Baskets - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Woven Storage Baskets</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Woven Storage Baskets: Adds warmth and function to any room with a clean look that suits modern homes.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">426</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,390</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,990</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HOME & LIVING PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-05" data-category="home">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Scented Soy Candle Trio">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/home/home-05-main.jpg" alt="Scented Soy Candle Trio" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/home/home-05-hover.jpg" alt="Scented Soy Candle Trio - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Scented Soy Candle Trio</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Scented Soy Candle Trio: Adds warmth and function to any room with a clean look that suits modern homes.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">333</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,090</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,680</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HOME & LIVING PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-06" data-category="home">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Velvet Cushion Covers">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/home/home-06-main.jpg" alt="Velvet Cushion Covers" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/home/home-06-hover.jpg" alt="Velvet Cushion Covers - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Velvet Cushion Covers</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Velvet Cushion Covers: Adds warmth and function to any room with a clean look that suits modern homes.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.9 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.9</span><span class="text-slate-500">(<span class="p-reviews">113</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳890</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,480</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ================================= -->
+<!-- HEALTH PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== HEALTH PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-01" data-category="health">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Digital Blood Pressure Monitor">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/health/health-01-main.jpg" alt="Digital Blood Pressure Monitor" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/health/health-01-hover.jpg" alt="Digital Blood Pressure Monitor - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Digital Blood Pressure Monitor</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Digital Blood Pressure Monitor: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.8 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.8</span><span class="text-slate-500">(<span class="p-reviews">420</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳3,290</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳4,390</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HEALTH PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-02" data-category="health">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Yoga Mat Non-Slip">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/health/health-02-main.jpg" alt="Yoga Mat Non-Slip" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/health/health-02-hover.jpg" alt="Yoga Mat Non-Slip - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Yoga Mat Non-Slip</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Yoga Mat Non-Slip: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">186</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,130</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HEALTH PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-03" data-category="health">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Multivitamin Daily Pack">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/health/health-03-main.jpg" alt="Multivitamin Daily Pack" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/health/health-03-hover.jpg" alt="Multivitamin Daily Pack - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Multivitamin Daily Pack</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Multivitamin Daily Pack: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">90</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳990</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,520</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HEALTH PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-04" data-category="health">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Adjustable Posture Corrector">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/health/health-04-main.jpg" alt="Adjustable Posture Corrector" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/health/health-04-hover.jpg" alt="Adjustable Posture Corrector - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Adjustable Posture Corrector</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Adjustable Posture Corrector: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">197</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,190</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,980</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HEALTH PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-05" data-category="health">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Digital Body Scale">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/health/health-05-main.jpg" alt="Digital Body Scale" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/health/health-05-hover.jpg" alt="Digital Body Scale - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Digital Body Scale</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Digital Body Scale: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">192</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,890</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,780</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== HEALTH PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-06" data-category="health">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Resistance Bands Set">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/health/health-06-main.jpg" alt="Resistance Bands Set" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/health/health-06-hover.jpg" alt="Resistance Bands Set - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Resistance Bands Set</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Resistance Bands Set: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">79</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,090</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,360</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ================================= -->
+<!-- ACCESSORIES PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== ACCESSORIES PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-01" data-category="accessories">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Leather Bifold Wallet">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/accessories/accessories-01-main.jpg" alt="Leather Bifold Wallet" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/accessories/accessories-01-hover.jpg" alt="Leather Bifold Wallet - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Leather Bifold Wallet</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Leather Bifold Wallet: Finishing touch with durable materials and a refined look that goes with everything.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">361</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,860</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ACCESSORIES PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-02" data-category="accessories">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Polarized Sunglasses">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/accessories/accessories-02-main.jpg" alt="Polarized Sunglasses" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/accessories/accessories-02-hover.jpg" alt="Polarized Sunglasses - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Polarized Sunglasses</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Polarized Sunglasses: Finishing touch with durable materials and a refined look that goes with everything.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">171</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,690</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,250</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ACCESSORIES PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-03" data-category="accessories">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Minimal Steel Watch">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/accessories/accessories-03-main.jpg" alt="Minimal Steel Watch" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/accessories/accessories-03-hover.jpg" alt="Minimal Steel Watch - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Minimal Steel Watch</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Minimal Steel Watch: Finishing touch with durable materials and a refined look that goes with everything.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.2 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.2</span><span class="text-slate-500">(<span class="p-reviews">210</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳3,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳4,990</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ACCESSORIES PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-04" data-category="accessories">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Everyday Crossbody Bag">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/accessories/accessories-04-main.jpg" alt="Everyday Crossbody Bag" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/accessories/accessories-04-hover.jpg" alt="Everyday Crossbody Bag - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Everyday Crossbody Bag</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Everyday Crossbody Bag: Finishing touch with durable materials and a refined look that goes with everything.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">73</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,390</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,680</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ACCESSORIES PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-05" data-category="accessories">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Silk Scarf Collection">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/accessories/accessories-05-main.jpg" alt="Silk Scarf Collection" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/accessories/accessories-05-hover.jpg" alt="Silk Scarf Collection - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Silk Scarf Collection</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Silk Scarf Collection: Finishing touch with durable materials and a refined look that goes with everything.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">140</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,290</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,150</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== ACCESSORIES PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-06" data-category="accessories">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Braided Leather Belt">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/accessories/accessories-06-main.jpg" alt="Braided Leather Belt" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/accessories/accessories-06-hover.jpg" alt="Braided Leather Belt - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Braided Leather Belt</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Braided Leather Belt: Finishing touch with durable materials and a refined look that goes with everything.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">183</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,190</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,380</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ================================= -->
+<!-- KITCHEN PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== KITCHEN PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-01" data-category="kitchen">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Non-Stick Cookware Set">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/kitchen/kitchen-01-main.jpg" alt="Non-Stick Cookware Set" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/kitchen/kitchen-01-hover.jpg" alt="Non-Stick Cookware Set - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Non-Stick Cookware Set</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Non-Stick Cookware Set: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">410</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳4,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳6,410</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== KITCHEN PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-02" data-category="kitchen">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Electric Kettle 1.8L">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/kitchen/kitchen-02-main.jpg" alt="Electric Kettle 1.8L" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/kitchen/kitchen-02-hover.jpg" alt="Electric Kettle 1.8L - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Electric Kettle 1.8L</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Electric Kettle 1.8L: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">239</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,990</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,060</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== KITCHEN PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-03" data-category="kitchen">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Stainless Knife Set">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/kitchen/kitchen-03-main.jpg" alt="Stainless Knife Set" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/kitchen/kitchen-03-hover.jpg" alt="Stainless Knife Set - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Stainless Knife Set</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Stainless Knife Set: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">121</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,590</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳4,320</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== KITCHEN PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-04" data-category="kitchen">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Glass Food Containers">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/kitchen/kitchen-04-main.jpg" alt="Glass Food Containers" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/kitchen/kitchen-04-hover.jpg" alt="Glass Food Containers - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Glass Food Containers</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Glass Food Containers: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">77</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,590</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,180</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== KITCHEN PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-05" data-category="kitchen">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Manual Coffee Grinder">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/kitchen/kitchen-05-main.jpg" alt="Manual Coffee Grinder" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/kitchen/kitchen-05-hover.jpg" alt="Manual Coffee Grinder - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Manual Coffee Grinder</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Manual Coffee Grinder: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">469</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,790</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,240</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== KITCHEN PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-06" data-category="kitchen">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Silicone Utensil Bundle">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/kitchen/kitchen-06-main.jpg" alt="Silicone Utensil Bundle" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/kitchen/kitchen-06-hover.jpg" alt="Silicone Utensil Bundle - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Silicone Utensil Bundle</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Silicone Utensil Bundle: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.2 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.2</span><span class="text-slate-500">(<span class="p-reviews">325</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳990</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,320</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ================================= -->
+<!-- PERSONAL CARE PRODUCTS -->
+<!-- ================================= -->
+
+<!-- ===== PERSONAL CARE PRODUCT 01 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-01" data-category="personal-care">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Rechargeable Beard Trimmer">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/personal-care/personal-care-01-main.jpg" alt="Rechargeable Beard Trimmer" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/personal-care/personal-care-01-hover.jpg" alt="Rechargeable Beard Trimmer - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Rechargeable Double Head Electric Shaver</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Features:
+Wet & Dry Dual Use: Enjoy flexibility with both wet and dry shaving options 🧴💧
+IPX7 Waterproof: Fully washable and waterproof for easy cleaning under water 💦🧼
+Dual Power Heads: No need to switch heads – both are ready for use at any time 🔄🔋
+Compact & Exquisite Design: Small and sleek for easy handling and storage ✨👜
+Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">234</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">SAR.130</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">SAR.170</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== PERSONAL CARE PRODUCT 02 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-02" data-category="personal-care">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Electric Toothbrush">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/personal-care/personal-care-02-main.jpg" alt="Electric Toothbrush" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/personal-care/personal-care-02-hover.jpg" alt="Electric Toothbrush - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Electric Toothbrush</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Electric Toothbrush: Everyday grooming essential with a comfortable feel and dependable results.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">114</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,990</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳3,060</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== PERSONAL CARE PRODUCT 03 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-03" data-category="personal-care">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Nourishing Body Lotion">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/personal-care/personal-care-03-main.jpg" alt="Nourishing Body Lotion" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/personal-care/personal-care-03-hover.jpg" alt="Nourishing Body Lotion - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Nourishing Body Lotion</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Nourishing Body Lotion: Everyday grooming essential with a comfortable feel and dependable results.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">286</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳690</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,150</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== PERSONAL CARE PRODUCT 04 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-04" data-category="personal-care">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Ionic Hair Dryer">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/personal-care/personal-care-04-main.jpg" alt="Ionic Hair Dryer" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/personal-care/personal-care-04-hover.jpg" alt="Ionic Hair Dryer - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Ionic Hair Dryer</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Ionic Hair Dryer: Everyday grooming essential with a comfortable feel and dependable results.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.2 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.2</span><span class="text-slate-500">(<span class="p-reviews">145</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳2,890</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳5,780</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== PERSONAL CARE PRODUCT 05 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-05" data-category="personal-care">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Herbal Shampoo & Conditioner">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/personal-care/personal-care-05-main.jpg" alt="Herbal Shampoo & Conditioner" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/personal-care/personal-care-05-hover.jpg" alt="Herbal Shampoo & Conditioner - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Herbal Shampoo & Conditioner</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Herbal Shampoo & Conditioner: Everyday grooming essential with a comfortable feel and dependable results.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.8 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.8</span><span class="text-slate-500">(<span class="p-reviews">213</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳890</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,110</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- ===== PERSONAL CARE PRODUCT 06 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-06" data-category="personal-care">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Travel Grooming Kit">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/personal-care/personal-care-06-main.jpg" alt="Travel Grooming Kit" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/personal-care/personal-care-06-hover.jpg" alt="Travel Grooming Kit - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Travel Grooming Kit</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Travel Grooming Kit: Everyday grooming essential with a comfortable feel and dependable results.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">177</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳1,990</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+
+
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="bg-white border-y border-slate-200" aria-labelledby="trust-title">
+  <div class="mx-auto max-w-7xl px-4 py-14">
+    <h2 id="trust-title" class="font-display text-3xl font-bold text-ink text-center">Why Shop with Souqora</h2>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5"><div class="rounded-2xl bg-white p-6 border border-slate-200 text-center"><span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-teal-50 text-teal-800"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 21l5-3 5 3-1.5-7"/></svg></span><h3 class="mt-4 font-semibold text-ink">Quality Products</h3><p class="mt-1 text-sm text-slate-600">Carefully selected items you can rely on.</p></div><div class="rounded-2xl bg-white p-6 border border-slate-200 text-center"><span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-teal-50 text-teal-800"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3 class="mt-4 font-semibold text-ink">Secure Shopping</h3><p class="mt-1 text-sm text-slate-600">Your details stay private and protected.</p></div><div class="rounded-2xl bg-white p-6 border border-slate-200 text-center"><span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-teal-50 text-teal-800"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></span><h3 class="mt-4 font-semibold text-ink">Fast Delivery</h3><p class="mt-1 text-sm text-slate-600">Quick shipping right to your door.</p></div><div class="rounded-2xl bg-white p-6 border border-slate-200 text-center"><span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-teal-50 text-teal-800"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><h3 class="mt-4 font-semibold text-ink">Easy Ordering</h3><p class="mt-1 text-sm text-slate-600">Order in a few taps with WhatsApp.</p></div><div class="rounded-2xl bg-white p-6 border border-slate-200 text-center"><span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-teal-50 text-teal-800"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="14" width="4" height="6" rx="1"/><rect x="17" y="14" width="4" height="6" rx="1"/></svg></span><h3 class="mt-4 font-semibold text-ink">Customer Support</h3><p class="mt-1 text-sm text-slate-600">Friendly help whenever you need it.</p></div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="mx-auto max-w-3xl px-4 py-16 text-center scroll-mt-20" aria-labelledby="about-title">
+  <h2 id="about-title" class="font-display text-3xl font-bold text-ink">About Souqora</h2>
+  <p class="mt-4 text-lg leading-relaxed text-slate-600">Souqora is an online shopping destination focused on convenient shopping, quality products and customer satisfaction. We bring popular everyday products together in one easy store, so you can browse, choose and order with confidence.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-brand scroll-mt-20" aria-labelledby="contact-title">
+  <div class="mx-auto max-w-5xl px-4 py-16 text-white">
+    <h2 id="contact-title" class="font-display text-3xl font-bold text-center">Contact Us</h2>
+    <p class="mt-2 text-center text-teal-100">Questions about an order? We are happy to help.</p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      <!-- EDIT: EMAIL ADDRESS -->
+      <a data-link="email" href="#" class="contact-card"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="font-semibold">Email</span><span data-fill="email" class="break-all text-sm text-teal-100">motiurfreelancer1@gmail.com</span></a>
+      <!-- EDIT: WHATSAPP NUMBER -->
+      <a data-link="wa" href="#" target="_blank" rel="noopener" class="contact-card"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-1-.4-2-1.400-2.400-2.400L11 9.500 10 7.500z"/></svg><span class="font-semibold">WhatsApp</span><span data-fill="whatsappDisplay" class="text-sm text-teal-100">+966572465918</span></a>
+      <!-- EDIT: WEBSITE URL -->
+      <a data-link="site" href="#" target="_blank" rel="noopener" class="contact-card"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span class="font-semibold">Website</span><span data-fill="site" class="text-sm text-teal-100">souqora.live</span></a>
+    </div>
+    <div class="mt-8 flex justify-center gap-3"><!-- EDIT: WHATSAPP URL -->
+<a data-link="wa" href="#" target="_blank" rel="noopener" aria-label="Whatsapp" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-1-.4-2-1.400-2.400-2.400L11 9.500 10 7.500z"/></svg></a><!-- EDIT: FACEBOOK URL -->
+<a data-link="fb" href="#" target="_blank" rel="noopener" aria-label="Facebook" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 00-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a><!-- EDIT: INSTAGRAM URL -->
+<a data-link="ig" href="#" target="_blank" rel="noopener" aria-label="Instagram" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a><!-- EDIT: YOUTUBE URL -->
+<a data-link="yt" href="#" target="_blank" rel="noopener" aria-label="Youtube" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9v6l5-3z"/></svg></a></div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-slate-300">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div><p class="font-display text-2xl font-bold text-white">Souqora</p><p class="mt-3 text-sm leading-relaxed">Your smart online shopping destination for quality products, great prices and easy ordering.</p></div>
+    <div><h2 class="font-semibold text-white">Quick Links</h2><ul class="mt-3 space-y-2 text-sm"><li><a class="hover:text-saffron transition" href="#home">Home</a></li><li><a class="hover:text-saffron transition" href="#shop">Shop</a></li><li><a class="hover:text-saffron transition" href="#categories">Categories</a></li><li><a class="hover:text-saffron transition" href="#about">About Us</a></li><li><a class="hover:text-saffron transition" href="#contact">Contact Us</a></li></ul></div>
+    <div><h2 class="font-semibold text-white">Customer Support</h2><ul class="mt-3 space-y-2 text-sm text-left"><li><button class="hover:text-saffron transition" data-policy="support">Customer Support</button></li><li><button class="hover:text-saffron transition" data-policy="shipping">Shipping Policy</button></li><li><button class="hover:text-saffron transition" data-policy="returns">Return Policy</button></li><li><button class="hover:text-saffron transition" data-policy="privacy">Privacy Policy</button></li><li><button class="hover:text-saffron transition" data-policy="terms">Terms & Conditions</button></li></ul></div>
+    <div><h2 class="font-semibold text-white">Contact</h2>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a data-link="email" href="#" class="hover:text-saffron transition break-all"><span data-fill="email">motiurfreelancer1@gmail.com</span></a></li>
+        <li><a data-link="wa" href="#" target="_blank" rel="noopener" class="hover:text-saffron transition"><span data-fill="whatsappDisplay">+966572465918</span></a></li>
+        <li><a data-link="site" href="#" target="_blank" rel="noopener" class="hover:text-saffron transition"><span data-fill="site">souqora.live</span></a></li>
+      </ul>
+      <div class="mt-4 flex gap-2"><!-- EDIT: WHATSAPP URL -->
+<a data-link="wa" href="#" target="_blank" rel="noopener" aria-label="Whatsapp" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-1-.4-2-1.400-2.400-2.400L11 9.500 10 7.500z"/></svg></a><!-- EDIT: FACEBOOK URL -->
+<a data-link="fb" href="#" target="_blank" rel="noopener" aria-label="Facebook" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 00-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a><!-- EDIT: INSTAGRAM URL -->
+<a data-link="ig" href="#" target="_blank" rel="noopener" aria-label="Instagram" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a><!-- EDIT: YOUTUBE URL -->
+<a data-link="yt" href="#" target="_blank" rel="noopener" aria-label="Youtube" class="social-link grid h-10 w-10 place-items-center rounded-full border border-white/25 text-white hover:bg-saffron hover:text-ink hover:border-saffron transition"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9v6l5-3z"/></svg></a></div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-sm">© 2026 Souqora. All Rights Reserved.</div>
+</footer>
+
+<!-- PRODUCT DETAIL (full screen, same page) -->
+<div id="detail-modal" class="modal fixed inset-0 z-50 hidden overflow-y-auto bg-white" role="dialog" aria-modal="true" aria-label="Product details">
+  <button class="close-btn fixed right-3 top-3 z-10 icon-btn bg-white shadow" data-close aria-label="Close product details"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div id="detail-body" class="mx-auto max-w-6xl px-4 py-14"></div>
+</div>
+
+<!-- ORDER FORM -->
+<div id="order-modal" class="modal fixed inset-0 z-[60] hidden items-end justify-center bg-black/60 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-labelledby="order-title">
+  <div class="panel relative max-h-[94vh] w-full max-w-2xl overflow-y-auto rounded-t-3xl bg-white p-5 sm:rounded-3xl sm:p-8">
+    <button class="icon-btn absolute right-3 top-3" data-close aria-label="Close order form"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="order-title" class="font-display text-2xl font-bold text-ink">Complete Your Order</h2>
+    <div id="order-summary" class="mt-4 rounded-2xl bg-slate-50 p-4 text-sm"></div>
+    <form id="order-form" class="mt-5 grid gap-4 sm:grid-cols-2" novalidate>
+      <div><label class="lbl" for="f-name">Full Name</label><input class="fld" id="f-name" required autocomplete="name"></div>
+      <div><label class="lbl" for="f-phone">Phone Number</label><input class="fld" id="f-phone" type="tel" required autocomplete="tel"></div>
+      <div><label class="lbl" for="f-wa">WhatsApp Number</label><input class="fld" id="f-wa" type="tel" required></div>
+      <div><label class="lbl" for="f-city">City</label><input class="fld" id="f-city" required autocomplete="address-level2"></div>
+      <div class="sm:col-span-2"><label class="lbl" for="f-address">Delivery Address</label><textarea class="fld" id="f-address" rows="2" required autocomplete="street-address"></textarea></div>
+      <div><label class="lbl" for="f-product">Selected Product</label><input class="fld bg-slate-100" id="f-product" readonly></div>
+      <div><label class="lbl" for="f-qty">Quantity</label><input class="fld" id="f-qty" type="number" min="1" max="99" value="1" required></div>
+      <fieldset class="sm:col-span-2"><legend class="lbl">Payment Method</legend>
+        <div class="grid gap-2 sm:grid-cols-2">
+          <label class="pay-opt"><input type="radio" name="pay" value="Cash on Delivery" checked> Cash on Delivery</label>
+          <label class="pay-opt"><input type="radio" name="pay" value="bKash"> bKash</label>
+        </div>
+        <!-- EDIT: BKASH NUMBER (change it in the settings block at the top of this file) -->
+        <p id="bkash-box" class="mt-2 hidden rounded-xl bg-pink-50 p-3 text-sm text-pink-900">Send payment to bKash number <strong data-fill="bkash">01XXXXXXXXX</strong> and add your transaction ID in the notes below.</p>
+      </fieldset>
+      <div class="sm:col-span-2"><label class="lbl" for="f-notes">Additional Notes</label><textarea class="fld" id="f-notes" rows="2"></textarea></div>
+      <p id="form-error" class="sm:col-span-2 hidden text-sm font-medium text-rose-600" role="alert">Please fill in all required fields.</p>
+      <button type="submit" class="sm:col-span-2 rounded-full bg-green-600 py-3.5 font-semibold text-white transition hover:bg-green-700">Confirm Order on WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div id="cart-overlay" class="fixed inset-0 z-[70] hidden bg-black/50"></div>
+<aside id="cart-drawer" class="fixed right-0 top-0 z-[80] flex h-full w-full max-w-md translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300" aria-label="Shopping cart" aria-hidden="true">
+  <div class="flex items-center justify-between border-b border-slate-200 p-4"><h2 class="font-display text-xl font-bold text-ink">Your Cart</h2><button class="icon-btn" id="cart-close" aria-label="Close cart"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div id="cart-items" class="flex-1 space-y-3 overflow-y-auto p-4"></div>
+  <div id="cart-foot" class="space-y-3 border-t border-slate-200 p-4">
+    <p class="flex justify-between text-sm text-slate-600"><span>Total items</span><span id="cart-qty">0</span></p>
+    <p class="flex justify-between text-lg font-bold text-ink"><span>Subtotal</span><span id="cart-subtotal">৳0</span></p>
+    <button id="cart-checkout" class="w-full rounded-full bg-saffron py-3 font-semibold text-ink transition hover:brightness-95">Checkout / Order</button>
+    <div class="grid grid-cols-2 gap-2"><button id="cart-continue" class="rounded-full border border-slate-300 py-2.5 text-sm font-semibold hover:bg-slate-50">Continue Shopping</button><button id="cart-clear" class="rounded-full border border-slate-300 py-2.5 text-sm font-semibold hover:bg-slate-50">Clear Cart</button></div>
+  </div>
+</div>
+
+<!-- INFO MODAL (footer policies) -->
+<div id="info-modal" class="modal fixed inset-0 z-[90] hidden items-center justify-center bg-black/60 p-4" role="dialog" aria-modal="true" aria-labelledby="info-title">
+  <div class="panel relative w-full max-w-lg rounded-3xl bg-white p-6 sm:p-8">
+    <button class="icon-btn absolute right-3 top-3" data-close aria-label="Close"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="info-title" class="font-display text-2xl font-bold text-ink"></h2><p id="info-text" class="mt-3 leading-relaxed text-slate-600"></p>
+  </div>
+</div>
+<div id="toast" class="pointer-events-none fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 translate-y-6 rounded-full bg-ink px-5 py-3 text-sm font-medium text-white opacity-0 shadow-lg transition" role="status"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
