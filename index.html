@@ -174,7 +174,7 @@ tailwind.config = { theme: { extend: {
   <h2 id="shop-title" class="font-display text-3xl font-bold text-ink">Our Products</h2>
   <div id="filters" class="no-scrollbar mt-5 flex gap-2 overflow-x-auto pb-2" role="group" aria-label="Filter products by category">
 <button class="filter-btn is-active" data-filter="all">All</button>
-<button class="filter-btn" data-filter="beauty">Beauty</button>
+<button class="filter-btn" data-filter="beauty">Top-Selling</button>
 <button class="filter-btn" data-filter="electronics">Electronics</button>
 <button class="filter-btn" data-filter="fashion">Fashion</button>
 <button class="filter-btn" data-filter="home">Home</button>
@@ -188,33 +188,54 @@ tailwind.config = { theme: { extend: {
   <div id="product-grid" class="mt-4 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
 
 <!-- ================================= -->
-<!-- BEAUTY PRODUCTS -->
+<!-- TOP SELLING PRODUCTS -->
 <!-- ================================= -->
 
-<!-- ===== BEAUTY PRODUCT 01 ===== -->
+<!-- ===== top-selling/top-selling 01 ===== -->
 <article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-01" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Rose Glow Face Serum">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/beauty/beauty-01-main.jpg" alt="Rose Glow Face Serum" loading="lazy" width="700" height="700">
+    <img class="img-main" src="images/products/top-selling/top-selling-01-main.jpg" alt="Rose Glow Face Serum" loading="lazy" width="700" height="700">
     <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/beauty/beauty-01-hover.jpg" alt="Rose Glow Face Serum - alternate view" loading="lazy" width="700" height="700">
+    <img class="img-hover" src="images/products/top-selling/top-selling-01-hover.jpg" alt="Rose Glow Face Serum - alternate view" loading="lazy" width="700" height="700">
     <!-- EDIT: DISCOUNT -->
     <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
     <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Best Seller</span>
   </div>
   <div class="flex flex-1 flex-col pt-3 px-1">
     <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Rose Glow Face Serum</button></h3>
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>EELHOE - Ginger Essential Oil</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Rose Glow Face Serum: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600"> EGEO-N-GF-ZAM-KSA Overview
+EELHOE Ginger Plant Aroma Oil is a herbal essential oil formulated to support body massage and skin care routines. Infused with ginger extract, it is commonly used for relaxation, improving skin appearance, and enhancing massage experiences. Its lightweight formula absorbs easily, making it suitable for daily use.
+
+Features
+
+Ginger Extract Formula
+Enriched with natural ginger oil known for warming and soothing properties.
+Ideal for Body Massage
+Helps relax muscles and improve circulation during massage.
+Lightweight & Fast Absorbing
+Non-greasy texture that penetrates the skin بسهولة.
+Multi-Purpose Use
+Can be used for massage, aromatherapy, and general skincare.
+Portable Size (30ml)
+Easy to carry for travel or daily use.
+Product Information
+Brand: EELHOE
+Product Type: Essential Oil / Massage Oil
+Main Ingredient: Ginger Extract
+Volume: 30ml
+Usage: Body massage, aromatherapy, skincare
+Packaging: Glass bottle with dropper cap.</p>
     <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">412</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,290</span>
+      <span class="p-price text-lg font-bold text-ink">SAR72</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,720</s>
+      <s class="p-orig text-sm text-slate-500">SAR102</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -223,20 +244,20 @@ tailwind.config = { theme: { extend: {
   </div>
 </article>
 
-<!-- ===== BEAUTY PRODUCT 02 ===== -->
+<!-- ===== top-selling/top-selling 02 ===== -->
 <article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-02" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Velvet Matte Lipstick Set">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/beauty/beauty-02-main.jpg" alt="Velvet Matte Lipstick Set" loading="lazy" width="700" height="700">
+    <img class="img-main" src="images/products/top-selling/top-selling-02-main.jpg" alt="Velvet Matte Lipstick Set" loading="lazy" width="700" height="700">
     <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/beauty/beauty-02-hover.jpg" alt="Velvet Matte Lipstick Set - alternate view" loading="lazy" width="700" height="700">
+    <img class="img-hover" src="images/products/top-selling/top-selling-02-hover.jpg" alt="Velvet Matte Lipstick Set - alternate view" loading="lazy" width="700" height="700">
     <!-- EDIT: DISCOUNT -->
     <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">30</span>%</span>
     <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">New</span>
   </div>
   <div class="flex flex-1 flex-col pt-3 px-1">
     <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
     <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Velvet Matte Lipstick Set</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
@@ -255,20 +276,20 @@ tailwind.config = { theme: { extend: {
   </div>
 </article>
 
-<!-- ===== BEAUTY PRODUCT 03 ===== -->
+<!-- ===== top-selling 03 ===== -->
 <article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-03" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Hydrating Day Cream SPF 30">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/beauty/beauty-03-main.jpg" alt="Hydrating Day Cream SPF 30" loading="lazy" width="700" height="700">
+    <img class="img-main" src="images/products/top-selling/top-selling-03-main.jpg" alt="Hydrating Day Cream SPF 30" loading="lazy" width="700" height="700">
     <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/beauty/beauty-03-hover.jpg" alt="Hydrating Day Cream SPF 30 - alternate view" loading="lazy" width="700" height="700">
+    <img class="img-hover" src="images/products/top-selling/top-selling-03-hover.jpg" alt="Hydrating Day Cream SPF 30 - alternate view" loading="lazy" width="700" height="700">
     <!-- EDIT: DISCOUNT -->
     <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
     <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Hot Deal</span>
   </div>
   <div class="flex flex-1 flex-col pt-3 px-1">
     <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
     <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Hydrating Day Cream SPF 30</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
@@ -287,20 +308,20 @@ tailwind.config = { theme: { extend: {
   </div>
 </article>
 
-<!-- ===== BEAUTY PRODUCT 04 ===== -->
+<!-- ===== top-selling/top-selling 04 ===== -->
 <article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-04" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/beauty/beauty-04-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
+    <img class="img-main" src="images/products/top-selling/top-selling-04-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
     <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/beauty/beauty-04-hover.jpg" alt="Pro Makeup Brush Kit - alternate view" loading="lazy" width="700" height="700">
+    <img class="img-hover" src="images/products/top-selling/top-selling-04-hover.jpg" alt="Pro Makeup Brush Kit - alternate view" loading="lazy" width="700" height="700">
     <!-- EDIT: DISCOUNT -->
     <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
     <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
   </div>
   <div class="flex flex-1 flex-col pt-3 px-1">
     <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
     <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Pro Makeup Brush Kit</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
@@ -319,30 +340,30 @@ tailwind.config = { theme: { extend: {
   </div>
 </article>
 
-<!-- ===== BEAUTY PRODUCT 05 ===== -->
+<!-- ===== Top selling 05 ===== -->
 <article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-05" data-category="beauty">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Argan Repair Hair Oil">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/beauty/beauty-05-main.jpg" alt="Argan Repair Hair Oil" loading="lazy" width="700" height="700">
+    <img class="img-main" src="images/products/top-selling/top-selling-05-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
     <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/beauty/beauty-05-hover.jpg" alt="Argan Repair Hair Oil - alternate view" loading="lazy" width="700" height="700">
+    <img class="img-hover" src="images/products/top-selling/top-selling-05-hover.jpg" alt="Pro Makeup Brush Kit - alternate view" loading="lazy" width="700" height="700">
     <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
   </div>
   <div class="flex flex-1 flex-col pt-3 px-1">
     <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Argan Repair Hair Oil</button></h3>
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Pro Makeup Brush Kit</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Argan Repair Hair Oil: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">355</span>)</span></p>
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Pro Makeup Brush Kit: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">350</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳850</span>
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,700</s>
+      <s class="p-orig text-sm text-slate-500">৳2,480</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -351,30 +372,92 @@ tailwind.config = { theme: { extend: {
   </div>
 </article>
 
-<!-- ===== BEAUTY PRODUCT 06 ===== -->
+<!-- ===== TOP SELLING 06 ===== -->
 <article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-06" data-category="beauty">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Vitamin C Brightening Mask">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/beauty/beauty-06-main.jpg" alt="Vitamin C Brightening Mask" loading="lazy" width="700" height="700">
+    <img class="img-main" src="images/products/top-selling/top-selling-06-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
     <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/beauty/beauty-06-hover.jpg" alt="Vitamin C Brightening Mask - alternate view" loading="lazy" width="700" height="700">
+    <img class="img-hover" src="images/products/top-selling/top-selling-06-hover.jpg" alt="Pro Makeup Brush Kit - alternate view" loading="lazy" width="700" height="700">
     <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
   </div>
   <div class="flex flex-1 flex-col pt-3 px-1">
     <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Beauty</span>
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Vitamin C Brightening Mask</button></h3>
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Pro Makeup Brush Kit</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Vitamin C Brightening Mask: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">377</span>)</span></p>
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Pro Makeup Brush Kit: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">350</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳720</span>
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳900</s>
+      <s class="p-orig text-sm text-slate-500">৳2,480</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+<!-- ===== TOP SELLING 07 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-07" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/top-selling/top-selling-07-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/top-selling/top-selling-07-hover.jpg" alt="Pro Makeup Brush Kit - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Pro Makeup Brush Kit</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Pro Makeup Brush Kit: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">350</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,480</s>
+    </p>
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
+      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
+      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
+    </div>
+  </div>
+</article>
+<!-- ===== TOP SELLING 08 ===== -->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-08" data-category="beauty">
+  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
+    <!-- EDIT: MAIN PRODUCT IMAGE -->
+    <img class="img-main" src="images/products/top-selling/top-selling-08-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
+    <!-- EDIT: HOVER PRODUCT IMAGE -->
+    <img class="img-hover" src="images/products/top-selling/top-selling-08-hover.jpg" alt="Pro Makeup Brush Kit - alternate view" loading="lazy" width="700" height="700">
+    <!-- EDIT: DISCOUNT -->
+    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
+    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Top Rated</span>
+  </div>
+  <div class="flex flex-1 flex-col pt-3 px-1">
+    <!-- EDIT: PRODUCT CATEGORY -->
+    <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
+    <!-- EDIT: PRODUCT NAME -->
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Pro Makeup Brush Kit</button></h3>
+    <!-- EDIT: PRODUCT DESCRIPTION -->
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Pro Makeup Brush Kit: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">350</span>)</span></p>
+    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+      <!-- EDIT: PRODUCT PRICE -->
+      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
+      <!-- EDIT: ORIGINAL PRICE -->
+      <s class="p-orig text-sm text-slate-500">৳2,480</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -516,68 +599,10 @@ tailwind.config = { theme: { extend: {
 </article>
 
 <!-- ===== ELECTRONICS PRODUCT 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-05" data-category="electronics">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: 65W Fast Charger">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/electronics/electronics-05-main.jpg" alt="65W Fast Charger" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/electronics/electronics-05-hover.jpg" alt="65W Fast Charger - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>65W Fast Charger</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">65W Fast Charger: Reliable performance and modern design, backed by quality components for daily use.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">301</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,390</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳2,320</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+
 
 <!-- ===== ELECTRONICS PRODUCT 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-06" data-category="electronics">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: HD Webcam 1080p">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/electronics/electronics-06-main.jpg" alt="HD Webcam 1080p" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/electronics/electronics-06-hover.jpg" alt="HD Webcam 1080p - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Electronics</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>HD Webcam 1080p</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">HD Webcam 1080p: Reliable performance and modern design, backed by quality components for daily use.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.2 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.2</span><span class="text-slate-500">(<span class="p-reviews">187</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳2,490</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳4,980</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+
 
 <!-- ================================= -->
 <!-- FASHION PRODUCTS -->
@@ -598,15 +623,31 @@ tailwind.config = { theme: { extend: {
     <!-- EDIT: PRODUCT CATEGORY -->
     <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
     <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Classic Cotton Polo</button></h3>
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Al Aqeeq Laheeb Perfume</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Classic Cotton Polo: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Al Aqeeq Laheeb Perfumeis an Eau de Parfum with an 80% alcohol content, designed for natural spray application. It is presented in an elegant 100 ML gold-colored octagonal bottle featuring a distinctive crown cap and textured gold neck, packaged in a matching gold and dark green box.
+
+Overview
+Al Aqeeq ARCH LAHEEB Eau de Parfum.
+Capacity of 100 ML (3.4 FL.OZ).
+Features an 80% VOL. alcohol content.
+Natural spray (Vaporisateur) application.
+Elegant gold-colored octagonal bottle design.
+Distinctive gold crown-shaped cap and textured gold neck detail.
+Presented in a gold/tan box with a dark green border.
+Product Information
+Product Name: Al Aqeeq ARCH LAHEEB
+Brand: Al Aqeeq
+Category: Eau de Parfum
+Capacity: 100 ML (3.4 FL.OZ)
+Alcohol Content: 80% VOL.
+Application Type: Vaporisateur Natural Spray.</p>
     <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">166</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,290</span>
+      <span class="p-price text-lg font-bold text-ink">SAR105</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,840</s>
+      <s class="p-orig text-sm text-slate-500">SAR150</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -712,68 +753,10 @@ tailwind.config = { theme: { extend: {
 </article>
 
 <!-- ===== FASHION PRODUCT 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-05" data-category="fashion">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Casual Canvas Sneakers">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/fashion/fashion-05-main.jpg" alt="Casual Canvas Sneakers" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/fashion/fashion-05-hover.jpg" alt="Casual Canvas Sneakers - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Casual Canvas Sneakers</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Casual Canvas Sneakers: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">181</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳2,490</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳3,110</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ===== FASHION PRODUCT 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-06" data-category="fashion">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Lightweight Bomber Jacket">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/fashion/fashion-06-main.jpg" alt="Lightweight Bomber Jacket" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/fashion/fashion-06-hover.jpg" alt="Lightweight Bomber Jacket - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Fashion</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Lightweight Bomber Jacket</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Lightweight Bomber Jacket: Comfortable fit and timeless style, made from breathable fabric that lasts wash after wash.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.8 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.8</span><span class="text-slate-500">(<span class="p-reviews">475</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳3,190</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳4,250</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ================================= -->
 <!-- HOME & LIVING PRODUCTS -->
@@ -908,68 +891,10 @@ tailwind.config = { theme: { extend: {
 </article>
 
 <!-- ===== HOME & LIVING PRODUCT 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-05" data-category="home">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Scented Soy Candle Trio">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/home/home-05-main.jpg" alt="Scented Soy Candle Trio" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/home/home-05-hover.jpg" alt="Scented Soy Candle Trio - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">35</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Scented Soy Candle Trio</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Scented Soy Candle Trio: Adds warmth and function to any room with a clean look that suits modern homes.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.5 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.5</span><span class="text-slate-500">(<span class="p-reviews">333</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,090</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,680</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ===== HOME & LIVING PRODUCT 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-06" data-category="home">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Velvet Cushion Covers">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/home/home-06-main.jpg" alt="Velvet Cushion Covers" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/home/home-06-hover.jpg" alt="Velvet Cushion Covers - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Home & Living</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Velvet Cushion Covers</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Velvet Cushion Covers: Adds warmth and function to any room with a clean look that suits modern homes.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.9 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.9</span><span class="text-slate-500">(<span class="p-reviews">113</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳890</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,480</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ================================= -->
 <!-- HEALTH PRODUCTS -->
@@ -996,9 +921,9 @@ tailwind.config = { theme: { extend: {
     <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.8 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.8</span><span class="text-slate-500">(<span class="p-reviews">420</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳3,290</span>
+      <span class="p-price text-lg font-bold text-ink">SAR115</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳4,390</s>
+      <s class="p-orig text-sm text-slate-500">SAR160</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -1104,68 +1029,10 @@ tailwind.config = { theme: { extend: {
 </article>
 
 <!-- ===== HEALTH PRODUCT 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-05" data-category="health">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Digital Body Scale">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/health/health-05-main.jpg" alt="Digital Body Scale" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/health/health-05-hover.jpg" alt="Digital Body Scale - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Digital Body Scale</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Digital Body Scale: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">192</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,890</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳3,780</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ===== HEALTH PRODUCT 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-06" data-category="health">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Resistance Bands Set">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/health/health-06-main.jpg" alt="Resistance Bands Set" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/health/health-06-hover.jpg" alt="Resistance Bands Set - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Health</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Resistance Bands Set</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Resistance Bands Set: Supports a healthier lifestyle with dependable quality and simple, everyday use.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">79</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,090</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,360</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ================================= -->
 <!-- ACCESSORIES PRODUCTS -->
@@ -1300,69 +1167,9 @@ tailwind.config = { theme: { extend: {
 </article>
 
 <!-- ===== ACCESSORIES PRODUCT 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-05" data-category="accessories">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Silk Scarf Collection">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/accessories/accessories-05-main.jpg" alt="Silk Scarf Collection" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/accessories/accessories-05-hover.jpg" alt="Silk Scarf Collection - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">40</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Silk Scarf Collection</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Silk Scarf Collection: Finishing touch with durable materials and a refined look that goes with everything.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">140</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,290</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳2,150</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
-
+<!--delete korchi-->
 <!-- ===== ACCESSORIES PRODUCT 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-06" data-category="accessories">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Braided Leather Belt">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/accessories/accessories-06-main.jpg" alt="Braided Leather Belt" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/accessories/accessories-06-hover.jpg" alt="Braided Leather Belt - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">50</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Accessories</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Braided Leather Belt</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Braided Leather Belt: Finishing touch with durable materials and a refined look that goes with everything.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">183</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,190</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳2,380</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
-
+<!--delete korchi-->
 <!-- ================================= -->
 <!-- KITCHEN PRODUCTS -->
 <!-- ================================= -->
@@ -1496,68 +1303,10 @@ tailwind.config = { theme: { extend: {
 </article>
 
 <!-- ===== KITCHEN PRODUCT 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-05" data-category="kitchen">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Manual Coffee Grinder">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/kitchen/kitchen-05-main.jpg" alt="Manual Coffee Grinder" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/kitchen/kitchen-05-hover.jpg" alt="Manual Coffee Grinder - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Manual Coffee Grinder</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Manual Coffee Grinder: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.6 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.6</span><span class="text-slate-500">(<span class="p-reviews">469</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,790</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳2,240</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ===== KITCHEN PRODUCT 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-06" data-category="kitchen">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Silicone Utensil Bundle">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/kitchen/kitchen-06-main.jpg" alt="Silicone Utensil Bundle" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/kitchen/kitchen-06-hover.jpg" alt="Silicone Utensil Bundle - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Kitchen</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Silicone Utensil Bundle</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Silicone Utensil Bundle: Built for busy kitchens with easy cleaning, sturdy build and smart everyday design.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.2 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.2</span><span class="text-slate-500">(<span class="p-reviews">325</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳990</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,320</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ================================= -->
 <!-- PERSONAL CARE PRODUCTS -->
@@ -1579,6 +1328,7 @@ tailwind.config = { theme: { extend: {
     <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
     <!-- EDIT: PRODUCT NAME -->
     <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Rechargeable Double Head Electric Shaver</button></h3>
+	<h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>DHES-N-GF-ZAM-KSA</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
     <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Features:
 Wet & Dry Dual Use: Enjoy flexibility with both wet and dry shaving options 🧴💧
@@ -1589,9 +1339,9 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
     <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.3 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.3</span><span class="text-slate-500">(<span class="p-reviews">234</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">SAR.130</span>
+      <span class="p-price text-lg font-bold text-ink">SAR130</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">SAR.170</s>
+      <s class="p-orig text-sm text-slate-500">SAR170</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -1697,68 +1447,10 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
 </article>
 
 <!-- ===== PERSONAL CARE PRODUCT 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-05" data-category="personal-care">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Herbal Shampoo & Conditioner">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/personal-care/personal-care-05-main.jpg" alt="Herbal Shampoo & Conditioner" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/personal-care/personal-care-05-hover.jpg" alt="Herbal Shampoo & Conditioner - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">20</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Trending</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Herbal Shampoo & Conditioner</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Herbal Shampoo & Conditioner: Everyday grooming essential with a comfortable feel and dependable results.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.8 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.8</span><span class="text-slate-500">(<span class="p-reviews">213</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳890</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,110</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 <!-- ===== PERSONAL CARE PRODUCT 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-06" data-category="personal-care">
-  <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Travel Grooming Kit">
-    <!-- EDIT: MAIN PRODUCT IMAGE -->
-    <img class="img-main" src="images/products/personal-care/personal-care-06-main.jpg" alt="Travel Grooming Kit" loading="lazy" width="700" height="700">
-    <!-- EDIT: HOVER PRODUCT IMAGE -->
-    <img class="img-hover" src="images/products/personal-care/personal-care-06-hover.jpg" alt="Travel Grooming Kit - alternate view" loading="lazy" width="700" height="700">
-    <!-- EDIT: DISCOUNT -->
-    <span class="absolute left-2 top-2 rounded-full bg-rose-600 px-2 py-0.5 text-xs font-bold text-white">-<span class="p-disc">25</span>%</span>
-    <span class="p-badge absolute right-2 top-2 rounded-full bg-ink/90 px-2 py-0.5 text-[11px] font-semibold text-white">Limited</span>
-  </div>
-  <div class="flex flex-1 flex-col pt-3 px-1">
-    <!-- EDIT: PRODUCT CATEGORY -->
-    <span class="p-cat text-xs font-medium text-teal-700">Personal Care</span>
-    <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Travel Grooming Kit</button></h3>
-    <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Travel Grooming Kit: Everyday grooming essential with a comfortable feel and dependable results.</p>
-    <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">177</span>)</span></p>
-    <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
-      <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
-      <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,990</s>
-    </p>
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
-      <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
-      <button class="btn-buy rounded-lg bg-saffron px-2 py-2 text-sm font-semibold text-ink hover:brightness-95 transition">Buy Now</button>
-    </div>
-  </div>
-</article>
+<!--delete korchi-->
 
 
   </div>

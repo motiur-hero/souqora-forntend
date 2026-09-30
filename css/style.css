@@ -5,7 +5,7 @@ body { -webkit-tap-highlight-color: transparent; }
 .no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* Marquee: moves right to left, continuous */
-.marquee-track { display: flex; width: max-content; padding: 8px 0; animation: marquee 40s linear infinite; }
+.marquee-track { display: flex; width: max-content; padding: 30px 0; animation: marquee 40s linear infinite; }
 .marquee-track:hover { animation-play-state: paused; }
 .mq-item { white-space: nowrap; padding: 0 3rem; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
