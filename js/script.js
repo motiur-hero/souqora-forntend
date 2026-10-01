@@ -27,6 +27,8 @@
     rating: $(".p-rating", el).textContent.trim(), reviews: $(".p-reviews", el).textContent.trim(),
     stars: $("[aria-hidden]", el.querySelector("p[aria-label]")).textContent,
     main: $(".img-main", el).getAttribute("src"), hover: $(".img-hover", el).getAttribute("src"),
+    // Optional: add data-gallery-1, data-gallery-2 and data-gallery-3 to a product card.
+    gallery: [el.getAttribute("data-gallery-1"), el.getAttribute("data-gallery-2"), el.getAttribute("data-gallery-3")].filter(Boolean),
   }));
   const byId = (id) => products.find((p) => p.id === id);
 
@@ -122,21 +124,63 @@
   const detail = $("#detail-modal");
   function openDetail(id) {
     const p = byId(id);
+    // Use the three optional gallery images when supplied. For old products without
+    // gallery fields, keep the UI intact by falling back to existing product images.
+    const gallery = [...p.gallery];
+    const fallbackImages = [p.main, p.hover, p.main].filter(Boolean);
+    for (const image of fallbackImages) {
+      if (gallery.length >= 3) break;
+      gallery.push(image);
+    }
+    const images = gallery.slice(0, 3);
+    const firstImage = images[0] || p.main;
+
     $("#detail-body").innerHTML = `
-      <div class="grid gap-8 md:grid-cols-2">
-        <div class="aspect-square overflow-hidden rounded-3xl bg-slate-100"><img src="${p.main}" alt="${p.name}" class="h-full w-full object-cover" width="700" height="700"></div>
-        <div class="flex flex-col justify-center">
+      <div class="grid items-start gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)]">
+        <div>
+          <div class="flex min-h-[420px] items-center justify-center overflow-hidden rounded-3xl bg-slate-100 shadow-sm sm:min-h-[560px]">
+            <img id="d-main-image" src="${firstImage}" alt="${p.name}" class="h-full max-h-[650px] w-full object-contain" width="800" height="800">
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-3" aria-label="Product image gallery">
+            ${images.map((src, index) => `
+              <button type="button" class="d-thumb overflow-hidden rounded-2xl border-2 ${index === 0 ? 'border-ink' : 'border-slate-200'} bg-slate-50 p-1 transition hover:border-ink" data-image="${src}" aria-label="View product image ${index + 1}" aria-pressed="${index === 0}">
+                <img src="${src}" alt="${p.name} view ${index + 1}" class="aspect-square w-full rounded-xl object-cover" width="180" height="180">
+              </button>`).join("")}
+          </div>
+        </div>
+
+        <div class="flex min-h-full flex-col justify-center py-2 lg:py-6">
           <span class="text-sm font-medium text-teal-700">${p.catName}</span>
-          <h2 class="mt-1 font-display text-3xl font-bold text-ink">${p.name}</h2>
+          <h2 class="mt-1 font-display text-3xl font-bold text-ink sm:text-4xl">${p.name}</h2>
           <p class="mt-3 flex items-center gap-2"><span class="text-amber-500" aria-hidden="true">${p.stars}</span><span class="font-semibold">${p.rating}</span><span class="text-slate-500">(${p.reviews} reviews)</span></p>
           <p class="mt-4 flex flex-wrap items-baseline gap-3"><span class="text-3xl font-bold text-ink">${money(p.price)}</span><s class="text-slate-500">${money(p.orig)}</s><span class="rounded-full bg-rose-600 px-2.5 py-0.5 text-sm font-bold text-white">-${p.disc}%</span></p>
-          <p class="mt-4 leading-relaxed text-slate-600">${p.desc}</p>
+          <div class="mt-5 rounded-2xl bg-slate-50 p-4 sm:p-5">
+            <h3 class="font-semibold text-ink">Product Description</h3>
+            <p class="mt-2 leading-relaxed text-slate-600">${p.desc}</p>
+          </div>
           <div class="mt-6 flex items-center gap-3"><span class="font-semibold">Quantity</span>
-            <div class="flex items-center rounded-full border border-slate-300"><button id="d-dec" class="h-10 w-10 text-xl" aria-label="Decrease quantity">−</button><output id="d-qty" class="w-8 text-center font-semibold">1</output><button id="d-inc" class="h-10 w-10 text-xl" aria-label="Increase quantity">+</button></div></div>
+            <div class="flex items-center rounded-full border border-slate-300 bg-white"><button id="d-dec" class="h-10 w-10 text-xl" aria-label="Decrease quantity">−</button><output id="d-qty" class="w-8 text-center font-semibold">1</output><button id="d-inc" class="h-10 w-10 text-xl" aria-label="Increase quantity">+</button></div></div>
           <div class="mt-6 grid gap-3 sm:grid-cols-2">
             <button id="d-add" class="rounded-full border-2 border-ink py-3 font-semibold text-ink transition hover:bg-ink hover:text-white">Add to Cart</button>
             <button id="d-buy" class="rounded-full bg-saffron py-3 font-semibold text-ink transition hover:brightness-95">Order Now</button></div>
-        </div></div>`;
+        </div>
+      </div>`;
+
+    const mainImage = $("#d-main-image");
+    $$(".d-thumb", $("#detail-body")).forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        mainImage.src = thumb.dataset.image;
+        $$(".d-thumb", $("#detail-body")).forEach((item) => {
+          item.classList.remove("border-ink");
+          item.classList.add("border-slate-200");
+          item.setAttribute("aria-pressed", "false");
+        });
+        thumb.classList.remove("border-slate-200");
+        thumb.classList.add("border-ink");
+        thumb.setAttribute("aria-pressed", "true");
+      });
+    });
+
     let q = 1; const out = $("#d-qty");
     $("#d-inc").onclick = () => { q = Math.min(99, q + 1); out.textContent = q; };
     $("#d-dec").onclick = () => { q = Math.max(1, q - 1); out.textContent = q; };

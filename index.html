@@ -108,7 +108,7 @@ tailwind.config = { theme: { extend: {
         <img src="images/categories/beauty.jpg" alt="Beauty category" loading="lazy" width="300" height="300" class="w-full h-full object-cover">
       </div>
       <!-- EDIT: CATEGORY NAME -->
-      <span class="mt-3 block font-semibold text-ink">Beauty</span>
+      <span class="mt-3 block font-semibold text-ink">Top Selling</span>
     </button>
 <button class="cat-card snap-start shrink-0 w-40 sm:w-52 text-left" data-cat="electronics" aria-label="Shop Electronics">
       <div class="overflow-hidden rounded-2xl aspect-square bg-slate-100">
@@ -192,7 +192,15 @@ tailwind.config = { theme: { extend: {
 <!-- ================================= -->
 
 <!-- ===== top-selling/top-selling 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-01" data-category="beauty">
+<!--
+  PRODUCT DETAIL GALLERY (optional, easy to edit):
+  Add 3 image paths to data-gallery-1, data-gallery-2 and data-gallery-3 on each product-card.
+  Example: data-gallery-1="images/products/beauty/beauty-01-view1.jpg"
+           data-gallery-2="images/products/beauty/beauty-01-view2.jpg"
+           data-gallery-3="images/products/beauty/beauty-01-view3.jpg"
+  If left blank, the existing main/hover images are used as a safe fallback.
+-->
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-01" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Rose Glow Face Serum">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-01-main.jpg" alt="Rose Glow Face Serum" loading="lazy" width="700" height="700">
@@ -208,7 +216,7 @@ tailwind.config = { theme: { extend: {
     <!-- EDIT: PRODUCT NAME -->
     <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>EELHOE - Ginger Essential Oil</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600"> EGEO-N-GF-ZAM-KSA Overview
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">
 EELHOE Ginger Plant Aroma Oil is a herbal essential oil formulated to support body massage and skin care routines. Infused with ginger extract, it is commonly used for relaxation, improving skin appearance, and enhancing massage experiences. Its lightweight formula absorbs easily, making it suitable for daily use.
 
 Features
@@ -245,7 +253,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== top-selling/top-selling 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-02" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="images/products/top-selling/top-selling-02-view3.jpg" data-id="beauty-02" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Velvet Matte Lipstick Set">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-02-main.jpg" alt="Velvet Matte Lipstick Set" loading="lazy" width="700" height="700">
@@ -259,15 +267,29 @@ Packaging: Glass bottle with dropper cap.</p>
     <!-- EDIT: PRODUCT CATEGORY -->
     <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Velvet Matte Lipstick Set</button></h3>
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>🌟 Luminous Car Tire Valve 🚗💡</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Velvet Matte Lipstick Set: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600"> 🌟 Luminous Car Tire Valve 🚗💡
+
+Elevate your vehicle's appearance and visibility with our mesmerizing Luminous Car Tire Valve! ✨
+
+🔦 Illuminate Your Wheels: These tire valves are designed to add an extra layer of brilliance to your car. Equipped with built-in LED lights, your tires will radiate a captivating glow, making your vehicle a true spectacle, both day and night. 🌌
+
+🛠️ Effortless Installation: No need for complex tools or wiring. Simply screw the Luminous Car Tire Valve onto your tire's valve stem, and you're good to go! 🧰
+
+👀 Enhanced Safety: Beyond their stylish appearance, these valve caps enhance your on-road safety by increasing your visibility to other drivers, making nighttime driving a breeze. 🚦
+
+👌 Universal Compatibility: Our Luminous Car Tire Valve is designed to fit most standard valve stems, making them an ideal accessory for cars, trucks, motorcycles, and even bicycles! 🚲
+
+Elevate your vehicle's aesthetics and safety with the Luminous Car Tire Valve – the ultimate combination of functionality and style. Prepare to turn heads and shine brightly on the road! 🔥🚗💥
+
+Upgrade your vehicle's aesthetics and safety with the Luminous Car Valve – the perfect blend of functionality and style. Get ready to turn heads and light up the road! 🔥🚗💥.</p>
     <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">28</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳990</span>
+      <span class="p-price text-lg font-bold text-ink">SAR75</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,410</s>
+      <s class="p-orig text-sm text-slate-500">SAR115</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -277,7 +299,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== top-selling 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-03" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-03" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Hydrating Day Cream SPF 30">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-03-main.jpg" alt="Hydrating Day Cream SPF 30" loading="lazy" width="700" height="700">
@@ -291,15 +313,21 @@ Packaging: Glass bottle with dropper cap.</p>
     <!-- EDIT: PRODUCT CATEGORY -->
     <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Hydrating Day Cream SPF 30</button></h3>
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Electronic Blood Pressure Monitor</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Hydrating Day Cream SPF 30: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">🏡 Home Electronic Sphygmomanometer: Your health at your fingertips! Our compact and portable electronic sphygmomanometer lets you measure your blood pressure anytime, anywhere. 🩺🌟
+
+🤳 Arm Type Design: Designed for accuracy, our arm-type sphygmomanometer ensures precise measurements. Just remember to roll up your sleeves or remove your coat for the most accurate results. 🧥📏
+
+💓 Clear Readings: Easily distinguish between systolic and diastolic pressure readings, helping you quickly assess your data for normalcy. With ample memory storage and irregular heartbeat detection, it keeps you informed about your health status and displays the average of your last three measurements. 📊❤️
+
+Stay in control of your health with our home electronic sphygmomanometer – it's your on-the-go companion for monitoring your blood pressure! 🏡🌡️🌟.</p>
     <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.7 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★★</span><span class="p-rating font-semibold text-ink">4.7</span><span class="text-slate-500">(<span class="p-reviews">232</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,150</span>
+      <span class="p-price text-lg font-bold text-ink">SAR115</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳1,770</s>
+      <s class="p-orig text-sm text-slate-500">SAR160</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -309,7 +337,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== top-selling/top-selling 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-04" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-04" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-04-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
@@ -323,15 +351,29 @@ Packaging: Glass bottle with dropper cap.</p>
     <!-- EDIT: PRODUCT CATEGORY -->
     <span class="p-cat text-xs font-medium text-teal-700">Top-selling</span>
     <!-- EDIT: PRODUCT NAME -->
-    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Pro Makeup Brush Kit</button></h3>
+    <h3 class="mt-0.5 font-semibold leading-snug text-ink"><button class="p-name text-left hover:text-teal-700" data-open>Al Aqeeq Laheeb Perfume</button></h3>
     <!-- EDIT: PRODUCT DESCRIPTION -->
-    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">Pro Makeup Brush Kit: Gentle, skin-friendly formula designed for a fresh and radiant everyday routine.</p>
+    <p class="p-desc mt-1 line-clamp-2 text-sm text-slate-600">
+Al Aqeeq ARCH LAHEEB Eau de Parfum.
+Capacity of 100 ML (3.4 FL.OZ).
+Features an 80% VOL. alcohol content.
+Natural spray (Vaporisateur) application.
+Elegant gold-colored octagonal bottle design.
+Distinctive gold crown-shaped cap and textured gold neck detail.
+Presented in a gold/tan box with a dark green border.
+Product Information
+Product Name: Al Aqeeq ARCH LAHEEB
+Brand: Al Aqeeq
+Category: Eau de Parfum
+Capacity: 100 ML (3.4 FL.OZ)
+Alcohol Content: 80% VOL.
+Application Type: Vaporisateur Natural Spray.</p>
     <p class="mt-2 flex items-center gap-1 text-sm" aria-label="Rated 4.4 out of 5"><span class="text-amber-500" aria-hidden="true">★★★★☆</span><span class="p-rating font-semibold text-ink">4.4</span><span class="text-slate-500">(<span class="p-reviews">350</span>)</span></p>
     <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
       <!-- EDIT: PRODUCT PRICE -->
-      <span class="p-price text-lg font-bold text-ink">৳1,490</span>
+      <span class="p-price text-lg font-bold text-ink">SAR99</span>
       <!-- EDIT: ORIGINAL PRICE -->
-      <s class="p-orig text-sm text-slate-500">৳2,480</s>
+      <s class="p-orig text-sm text-slate-500">SAR150</s>
     </p>
     <div class="mt-auto grid grid-cols-2 gap-2 pt-3">
       <button class="btn-add rounded-lg border border-ink px-2 py-2 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition">Add to Cart</button>
@@ -341,7 +383,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== Top selling 05 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-05" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-05" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-05-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
@@ -373,7 +415,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== TOP SELLING 06 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-06" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-06" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-06-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
@@ -404,7 +446,7 @@ Packaging: Glass bottle with dropper cap.</p>
   </div>
 </article>
 <!-- ===== TOP SELLING 07 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-07" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-07" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-07-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
@@ -435,7 +477,7 @@ Packaging: Glass bottle with dropper cap.</p>
   </div>
 </article>
 <!-- ===== TOP SELLING 08 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="beauty-08" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-08" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Pro Makeup Brush Kit">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-08-main.jpg" alt="Pro Makeup Brush Kit" loading="lazy" width="700" height="700">
@@ -471,7 +513,7 @@ Packaging: Glass bottle with dropper cap.</p>
 <!-- ================================= -->
 
 <!-- ===== ELECTRONICS PRODUCT 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-01" data-category="electronics">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="electronics-01" data-category="electronics">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Wireless Earbuds Pro">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/electronics/electronics-01-main.jpg" alt="Wireless Earbuds Pro" loading="lazy" width="700" height="700">
@@ -503,7 +545,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== ELECTRONICS PRODUCT 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-02" data-category="electronics">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="images/products/top-selling/top-selling-02-view3.jpg" data-id="electronics-02" data-category="electronics">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Smart Fitness Watch">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/electronics/electronics-02-main.jpg" alt="Smart Fitness Watch" loading="lazy" width="700" height="700">
@@ -535,7 +577,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== ELECTRONICS PRODUCT 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-03" data-category="electronics">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="electronics-03" data-category="electronics">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: 20000mAh Power Bank">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/electronics/electronics-03-main.jpg" alt="20000mAh Power Bank" loading="lazy" width="700" height="700">
@@ -567,7 +609,7 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== ELECTRONICS PRODUCT 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="electronics-04" data-category="electronics">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="electronics-04" data-category="electronics">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Bluetooth Speaker Mini">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/electronics/electronics-04-main.jpg" alt="Bluetooth Speaker Mini" loading="lazy" width="700" height="700">
@@ -609,7 +651,7 @@ Packaging: Glass bottle with dropper cap.</p>
 <!-- ================================= -->
 
 <!-- ===== FASHION PRODUCT 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-01" data-category="fashion">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="fashion-01" data-category="fashion">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Classic Cotton Polo">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/fashion/fashion-01-main.jpg" alt="Classic Cotton Polo" loading="lazy" width="700" height="700">
@@ -657,7 +699,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== FASHION PRODUCT 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-02" data-category="fashion">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="fashion-02" data-category="fashion">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Slim Fit Denim Jeans">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/fashion/fashion-02-main.jpg" alt="Slim Fit Denim Jeans" loading="lazy" width="700" height="700">
@@ -689,7 +731,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== FASHION PRODUCT 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-03" data-category="fashion">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="fashion-03" data-category="fashion">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Everyday Hoodie">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/fashion/fashion-03-main.jpg" alt="Everyday Hoodie" loading="lazy" width="700" height="700">
@@ -721,7 +763,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== FASHION PRODUCT 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="fashion-04" data-category="fashion">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="fashion-04" data-category="fashion">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Summer Linen Shirt">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/fashion/fashion-04-main.jpg" alt="Summer Linen Shirt" loading="lazy" width="700" height="700">
@@ -763,7 +805,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 <!-- ================================= -->
 
 <!-- ===== HOME & LIVING PRODUCT 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-01" data-category="home">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="home-01" data-category="home">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Ceramic Table Lamp">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/home/home-01-main.jpg" alt="Ceramic Table Lamp" loading="lazy" width="700" height="700">
@@ -795,7 +837,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== HOME & LIVING PRODUCT 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-02" data-category="home">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="home-02" data-category="home">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Soft Knit Throw Blanket">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/home/home-02-main.jpg" alt="Soft Knit Throw Blanket" loading="lazy" width="700" height="700">
@@ -827,7 +869,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== HOME & LIVING PRODUCT 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-03" data-category="home">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="home-03" data-category="home">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Minimal Wall Clock">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/home/home-03-main.jpg" alt="Minimal Wall Clock" loading="lazy" width="700" height="700">
@@ -859,7 +901,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== HOME & LIVING PRODUCT 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="home-04" data-category="home">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="home-04" data-category="home">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Woven Storage Baskets">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/home/home-04-main.jpg" alt="Woven Storage Baskets" loading="lazy" width="700" height="700">
@@ -901,7 +943,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 <!-- ================================= -->
 
 <!-- ===== HEALTH PRODUCT 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-01" data-category="health">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="health-01" data-category="health">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Digital Blood Pressure Monitor">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/health/health-01-main.jpg" alt="Digital Blood Pressure Monitor" loading="lazy" width="700" height="700">
@@ -933,7 +975,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== HEALTH PRODUCT 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-02" data-category="health">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="health-02" data-category="health">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Yoga Mat Non-Slip">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/health/health-02-main.jpg" alt="Yoga Mat Non-Slip" loading="lazy" width="700" height="700">
@@ -965,7 +1007,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== HEALTH PRODUCT 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-03" data-category="health">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="health-03" data-category="health">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Multivitamin Daily Pack">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/health/health-03-main.jpg" alt="Multivitamin Daily Pack" loading="lazy" width="700" height="700">
@@ -997,7 +1039,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== HEALTH PRODUCT 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="health-04" data-category="health">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="health-04" data-category="health">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Adjustable Posture Corrector">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/health/health-04-main.jpg" alt="Adjustable Posture Corrector" loading="lazy" width="700" height="700">
@@ -1039,7 +1081,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 <!-- ================================= -->
 
 <!-- ===== ACCESSORIES PRODUCT 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-01" data-category="accessories">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="accessories-01" data-category="accessories">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Leather Bifold Wallet">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/accessories/accessories-01-main.jpg" alt="Leather Bifold Wallet" loading="lazy" width="700" height="700">
@@ -1071,7 +1113,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== ACCESSORIES PRODUCT 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-02" data-category="accessories">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="accessories-02" data-category="accessories">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Polarized Sunglasses">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/accessories/accessories-02-main.jpg" alt="Polarized Sunglasses" loading="lazy" width="700" height="700">
@@ -1103,7 +1145,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== ACCESSORIES PRODUCT 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-03" data-category="accessories">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="accessories-03" data-category="accessories">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Minimal Steel Watch">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/accessories/accessories-03-main.jpg" alt="Minimal Steel Watch" loading="lazy" width="700" height="700">
@@ -1135,7 +1177,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== ACCESSORIES PRODUCT 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="accessories-04" data-category="accessories">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="accessories-04" data-category="accessories">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Everyday Crossbody Bag">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/accessories/accessories-04-main.jpg" alt="Everyday Crossbody Bag" loading="lazy" width="700" height="700">
@@ -1175,7 +1217,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 <!-- ================================= -->
 
 <!-- ===== KITCHEN PRODUCT 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-01" data-category="kitchen">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="kitchen-01" data-category="kitchen">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Non-Stick Cookware Set">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/kitchen/kitchen-01-main.jpg" alt="Non-Stick Cookware Set" loading="lazy" width="700" height="700">
@@ -1207,7 +1249,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== KITCHEN PRODUCT 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-02" data-category="kitchen">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="kitchen-02" data-category="kitchen">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Electric Kettle 1.8L">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/kitchen/kitchen-02-main.jpg" alt="Electric Kettle 1.8L" loading="lazy" width="700" height="700">
@@ -1239,7 +1281,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== KITCHEN PRODUCT 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-03" data-category="kitchen">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="kitchen-03" data-category="kitchen">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Stainless Knife Set">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/kitchen/kitchen-03-main.jpg" alt="Stainless Knife Set" loading="lazy" width="700" height="700">
@@ -1271,7 +1313,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 </article>
 
 <!-- ===== KITCHEN PRODUCT 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="kitchen-04" data-category="kitchen">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="kitchen-04" data-category="kitchen">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Glass Food Containers">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/kitchen/kitchen-04-main.jpg" alt="Glass Food Containers" loading="lazy" width="700" height="700">
@@ -1313,7 +1355,7 @@ Application Type: Vaporisateur Natural Spray.</p>
 <!-- ================================= -->
 
 <!-- ===== PERSONAL CARE PRODUCT 01 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-01" data-category="personal-care">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="personal-care-01" data-category="personal-care">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Rechargeable Beard Trimmer">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/personal-care/personal-care-01-main.jpg" alt="Rechargeable Beard Trimmer" loading="lazy" width="700" height="700">
@@ -1351,7 +1393,7 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
 </article>
 
 <!-- ===== PERSONAL CARE PRODUCT 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-02" data-category="personal-care">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="personal-care-02" data-category="personal-care">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Electric Toothbrush">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/personal-care/personal-care-02-main.jpg" alt="Electric Toothbrush" loading="lazy" width="700" height="700">
@@ -1383,7 +1425,7 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
 </article>
 
 <!-- ===== PERSONAL CARE PRODUCT 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-03" data-category="personal-care">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="personal-care-03" data-category="personal-care">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Nourishing Body Lotion">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/personal-care/personal-care-03-main.jpg" alt="Nourishing Body Lotion" loading="lazy" width="700" height="700">
@@ -1415,7 +1457,7 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
 </article>
 
 <!-- ===== PERSONAL CARE PRODUCT 04 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-id="personal-care-04" data-category="personal-care">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="personal-care-04" data-category="personal-care">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Ionic Hair Dryer">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/personal-care/personal-care-04-main.jpg" alt="Ionic Hair Dryer" loading="lazy" width="700" height="700">
@@ -1556,7 +1598,7 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
   <div id="cart-items" class="flex-1 space-y-3 overflow-y-auto p-4"></div>
   <div id="cart-foot" class="space-y-3 border-t border-slate-200 p-4">
     <p class="flex justify-between text-sm text-slate-600"><span>Total items</span><span id="cart-qty">0</span></p>
-    <p class="flex justify-between text-lg font-bold text-ink"><span>Subtotal</span><span id="cart-subtotal">৳0</span></p>
+    <p class="flex justify-between text-lg font-bold text-ink"><span>Subtotal</span><span id="cart-subtotal">SAR0</span></p>
     <button id="cart-checkout" class="w-full rounded-full bg-saffron py-3 font-semibold text-ink transition hover:brightness-95">Checkout / Order</button>
     <div class="grid grid-cols-2 gap-2"><button id="cart-continue" class="rounded-full border border-slate-300 py-2.5 text-sm font-semibold hover:bg-slate-50">Continue Shopping</button><button id="cart-clear" class="rounded-full border border-slate-300 py-2.5 text-sm font-semibold hover:bg-slate-50">Clear Cart</button></div>
   </div>
