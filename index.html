@@ -195,12 +195,12 @@ tailwind.config = { theme: { extend: {
 <!--
   PRODUCT DETAIL GALLERY (optional, easy to edit):
   Add 3 image paths to data-gallery-1, data-gallery-2 and data-gallery-3 on each product-card.
-  Example: data-gallery-1="images/products/beauty/beauty-01-view1.jpg"
+  Example: data-gallery-1="images/products/top-selling/top-selling-01-view1.jpg"
            data-gallery-2="images/products/beauty/beauty-01-view2.jpg"
            data-gallery-3="images/products/beauty/beauty-01-view3.jpg"
   If left blank, the existing main/hover images are used as a safe fallback.
 -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-01" data-category="beauty">
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="images/products/top-selling/top-selling-01-view1.jpg" data-gallery-2="images/products/top-selling/top-selling-01-view2.jpg" data-gallery-3="images/products/top-selling/top-selling-01-hover.jpg" data-id="beauty-01" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Rose Glow Face Serum">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-01-main.jpg" alt="Rose Glow Face Serum" loading="lazy" width="700" height="700">
@@ -253,7 +253,9 @@ Packaging: Glass bottle with dropper cap.</p>
 </article>
 
 <!-- ===== top-selling/top-selling 02 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="images/products/top-selling/top-selling-02-view3.jpg" data-id="beauty-02" data-category="beauty">
+
+
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="images/products/top-selling/top-selling-02-hover.jpg" data-gallery-2="images/products/top-selling/top-selling-02-view2.jpg" data-gallery-3="images/products/top-selling/top-selling-02-main.jpg" data-id="beauty-02" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Velvet Matte Lipstick Set">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-02-main.jpg" alt="Velvet Matte Lipstick Set" loading="lazy" width="700" height="700">
@@ -299,7 +301,9 @@ Upgrade your vehicle's aesthetics and safety with the Luminous Car Valve – the
 </article>
 
 <!-- ===== top-selling 03 ===== -->
-<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="" data-gallery-2="" data-gallery-3="" data-id="beauty-03" data-category="beauty">
+
+
+<article class="product-card group flex flex-col rounded-2xl bg-white border border-slate-200 p-2.5 sm:p-3" data-gallery-1="images/products/top-selling/top-selling-03-hover.jpg" data-gallery-2="images/products/top-selling/top-selling-03-view2.jpg" data-gallery-3="images/products/top-selling/top-selling-03-main.jpg" data-id="beauty-03" data-category="beauty">
   <div class="img-wrap relative aspect-square overflow-hidden rounded-xl bg-slate-100 cursor-pointer" data-open tabindex="0" role="button" aria-label="View details: Hydrating Day Cream SPF 30">
     <!-- EDIT: MAIN PRODUCT IMAGE -->
     <img class="img-main" src="images/products/top-selling/top-selling-03-main.jpg" alt="Hydrating Day Cream SPF 30" loading="lazy" width="700" height="700">
@@ -1569,24 +1573,36 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
     <h2 id="order-title" class="font-display text-2xl font-bold text-ink">Complete Your Order</h2>
     <div id="order-summary" class="mt-4 rounded-2xl bg-slate-50 p-4 text-sm"></div>
     <form id="order-form" class="mt-5 grid gap-4 sm:grid-cols-2" novalidate>
-      <div><label class="lbl" for="f-name">Full Name</label><input class="fld" id="f-name" required autocomplete="name"></div>
-      <div><label class="lbl" for="f-phone">Phone Number</label><input class="fld" id="f-phone" type="tel" required autocomplete="tel"></div>
-      <div><label class="lbl" for="f-wa">WhatsApp Number</label><input class="fld" id="f-wa" type="tel" required></div>
-      <div><label class="lbl" for="f-city">City</label><input class="fld" id="f-city" required autocomplete="address-level2"></div>
-      <div class="sm:col-span-2"><label class="lbl" for="f-address">Delivery Address</label><textarea class="fld" id="f-address" rows="2" required autocomplete="street-address"></textarea></div>
-      <div><label class="lbl" for="f-product">Selected Product</label><input class="fld bg-slate-100" id="f-product" readonly></div>
-      <div><label class="lbl" for="f-qty">Quantity</label><input class="fld" id="f-qty" type="number" min="1" max="99" value="1" required></div>
+      <div><label class="lbl" for="f-name">Full Name</label><input class="fld" id="f-name" required autocomplete="name"><p id="e-name" class="mt-1 hidden text-xs font-medium text-rose-600" role="alert"></p></div>
+      <div><label class="lbl" for="f-phone">Mobile Phone Number</label><input class="fld" id="f-phone" type="tel" inputmode="tel" required autocomplete="tel"><p id="e-phone" class="mt-1 hidden text-xs font-medium text-rose-600" role="alert"></p></div>
+      <div><label class="lbl" for="f-city">City</label><input class="fld" id="f-city" required autocomplete="address-level2"><p id="e-city" class="mt-1 hidden text-xs font-medium text-rose-600" role="alert"></p></div>
+      <div><label class="lbl" for="f-qty">Quantity</label><input class="fld" id="f-qty" type="number" min="1" max="99" step="1" value="1" required><p id="e-qty" class="mt-1 hidden text-xs font-medium text-rose-600" role="alert"></p></div>
+      <div class="sm:col-span-2"><label class="lbl" for="f-address">Full Delivery Address</label><textarea class="fld" id="f-address" rows="2" required autocomplete="street-address"></textarea><p id="e-address" class="mt-1 hidden text-xs font-medium text-rose-600" role="alert"></p></div>
+      <div class="sm:col-span-2"><label class="lbl" for="f-product">Selected Product</label><input class="fld bg-slate-100" id="f-product" readonly></div>
       <fieldset class="sm:col-span-2"><legend class="lbl">Payment Method</legend>
-        <div class="grid gap-2 sm:grid-cols-2">
+        <div class="grid gap-2 sm:grid-cols-3">
           <label class="pay-opt"><input type="radio" name="pay" value="Cash on Delivery" checked> Cash on Delivery</label>
+          <label class="pay-opt"><input type="radio" name="pay" value="Direct Bank Transfer"> Bank Transfer</label>
           <label class="pay-opt"><input type="radio" name="pay" value="bKash"> bKash</label>
         </div>
-        <!-- EDIT: BKASH NUMBER (change it in the settings block at the top of this file) -->
-        <p id="bkash-box" class="mt-2 hidden rounded-xl bg-pink-50 p-3 text-sm text-pink-900">Send payment to bKash number <strong data-fill="bkash">01XXXXXXXXX</strong> and add your transaction ID in the notes below.</p>
+        <!-- EDIT: BKASH NUMBER (change data-bkash in the settings block at the top of this file) -->
+        <p id="bkash-box" class="mt-3 hidden rounded-xl bg-pink-50 p-4 text-sm text-pink-900">Send the total amount to bKash number <strong data-fill="bkash">01XXXXXXXXX</strong>, then enter your bKash Transaction ID (TrxID) below.</p>
+        <!-- EDIT: BANK DETAILS are set in the BANK_DETAILS block at the top of js/script.js -->
+        <div id="bank-box" class="mt-3 hidden rounded-xl bg-teal-50 p-4 text-sm text-teal-900">
+          <p class="font-semibold">Transfer the total amount to the account below, then enter your transaction/reference number.</p>
+          <dl class="mt-2 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
+            <dt>Bank name</dt><dd id="bank-name" class="break-all font-medium"></dd>
+            <dt>Account name</dt><dd id="bank-account-name" class="break-all font-medium"></dd>
+            <dt>Account number</dt><dd id="bank-account-number" class="break-all font-medium"></dd>
+            <dt>IBAN</dt><dd id="bank-iban" class="break-all font-medium"></dd>
+          </dl>
+        </div>
       </fieldset>
-      <div class="sm:col-span-2"><label class="lbl" for="f-notes">Additional Notes</label><textarea class="fld" id="f-notes" rows="2"></textarea></div>
-      <p id="form-error" class="sm:col-span-2 hidden text-sm font-medium text-rose-600" role="alert">Please fill in all required fields.</p>
-      <button type="submit" class="sm:col-span-2 rounded-full bg-green-600 py-3.5 font-semibold text-white transition hover:bg-green-700">Confirm Order on WhatsApp</button>
+      <div id="txn-wrap" class="sm:col-span-2 hidden"><label id="txn-label" class="lbl" for="f-txn">Transaction / Reference Number</label><input class="fld" id="f-txn" maxlength="60" autocomplete="off"><p id="e-txn" class="mt-1 hidden text-xs font-medium text-rose-600" role="alert"></p></div>
+      <p id="form-error" class="sm:col-span-2 hidden rounded-xl bg-rose-50 p-3 text-sm font-medium text-rose-700" role="alert"></p>
+      <button id="order-submit" type="submit" class="sm:col-span-2 flex items-center justify-center gap-2 rounded-full bg-green-600 py-3.5 font-semibold text-white transition hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-60">
+        <svg id="order-spinner" class="hidden h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <span id="order-submit-label">Place Order</span></button>
     </form>
   </div>
 </div>
@@ -1611,8 +1627,21 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
     <h2 id="info-title" class="font-display text-2xl font-bold text-ink"></h2><p id="info-text" class="mt-3 leading-relaxed text-slate-600"></p>
   </div>
 </div>
+<!-- ORDER SUCCESS POPUP (filled by js/script.js after the order is confirmed saved) -->
+<div id="success-modal" class="modal fixed inset-0 z-[95] hidden items-center justify-center bg-black/60 p-4" role="dialog" aria-modal="true" aria-labelledby="success-title">
+  <div class="panel relative max-h-[94vh] w-full max-w-md overflow-y-auto rounded-3xl bg-white p-6 text-center sm:p-8">
+    <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600"><svg class="h-9 w-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+    <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-green-700">Congratulations!</p>
+    <h2 id="success-title" class="mt-1 font-display text-2xl font-bold text-ink">Order Placed Successfully!</h2>
+    <p class="mt-3 text-xs text-slate-500">Total amount</p><p id="success-total" class="text-3xl font-bold text-ink"></p>
+    <div id="success-details" class="mt-5 rounded-2xl bg-slate-50 p-4 text-left text-sm"></div>
+    <p class="mt-4 text-sm leading-relaxed text-slate-600">Thank you for shopping with Souqora! Your order has been submitted successfully. We will process your order according to our order fulfilment process.</p>
+    <button id="success-continue" type="button" class="mt-5 w-full rounded-full bg-saffron py-3 font-semibold text-ink transition hover:brightness-95">Continue Shopping</button>
+  </div>
+</div>
 <div id="toast" class="pointer-events-none fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 translate-y-6 rounded-full bg-ink px-5 py-3 text-sm font-medium text-white opacity-0 shadow-lg transition" role="status"></div>
 
 <script src="js/script.js"></script>
+
 </body>
 </html>
