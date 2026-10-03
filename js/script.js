@@ -102,10 +102,19 @@ async function sendOrderToGoogleSheets(orderData) {
   /* ---- Toast + modal helpers ---- */
   let toastTimer;
   function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2200); }
-  function openModal(m) { m.classList.remove("hidden"); m.classList.add("is-open"); document.body.style.overflow = "hidden"; }
+  function openModal(m) {
+    if (!m) return;
+    m.classList.remove("hidden");
+    m.classList.add("is-open");
+    // Explicit inline display makes modal visibility reliable even if the
+    // project's external CSS is missing or overrides .modal.is-open.
+    m.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
   function closeModal(m) {
     if (m === orderModal && submitting) return; // don't lose the form while sending
     m.classList.add("hidden"); m.classList.remove("is-open");
+    m.style.display = "none";
     if (!$(".modal.is-open") && $("#cart-drawer").getAttribute("aria-hidden") === "true") document.body.style.overflow = "";
     if (m === detail) { document.title = baseTitle; leaveProductUrl(); }
     if (m === successModal) { if (detail.classList.contains("is-open")) closeModal(detail); $("#shop").scrollIntoView(); }
@@ -254,7 +263,7 @@ async function sendOrderToGoogleSheets(orderData) {
           <p class="mt-4 flex flex-wrap items-baseline gap-3"><span class="text-3xl font-bold text-ink">${money(p.price)}</span><s class="text-slate-500">${money(p.orig)}</s><span class="rounded-full bg-rose-600 px-2.5 py-0.5 text-sm font-bold text-white">-${p.disc}%</span></p>
           <div class="mt-5 rounded-2xl bg-slate-50 p-4 sm:p-5">
             <h3 class="font-semibold text-ink">Product Description</h3>
-            <p id="d-desc" class="mt-2 line-clamp-6 whitespace-pre-line leading-relaxed text-slate-600">${p.desc}</p>
+            <p id="d-desc" class="mt-2 whitespace-pre-line leading-relaxed text-slate-600">${p.desc}</p>
             <button type="button" id="d-more" class="mt-2 hidden text-sm font-semibold text-teal-700 hover:underline" aria-expanded="false">Read more</button>
           </div>
           <div class="mt-6 flex items-center gap-3"><span class="font-semibold">Quantity</span>
@@ -298,11 +307,24 @@ async function sendOrderToGoogleSheets(orderData) {
     $("#d-add").onclick = () => addToCart(id, q);
     $("#d-buy").onclick = () => openOrder([{ p, qty: q }], false);
     detail.scrollTop = 0; openModal(detail); $(".close-btn", detail).focus();
-    // Long descriptions are shortened to 6 lines with a "Read more" toggle (full text stays in the page).
+    // Collapse long descriptions to about six lines using inline styles,
+    // so this works even if Tailwind's line-clamp utility is unavailable.
     const desc = $("#d-desc"), more = $("#d-more");
+    const collapsedHeight = "9.75em"; // about six lines with leading-relaxed
+    desc.style.maxHeight = collapsedHeight;
+    desc.style.overflow = "hidden";
+    more.classList.add("hidden");
+    more.textContent = "Read more";
+    more.setAttribute("aria-expanded", "false");
     if (desc.scrollHeight > desc.clientHeight + 2) {
       more.classList.remove("hidden");
-      more.onclick = () => { const open = desc.classList.toggle("line-clamp-6") === false; more.textContent = open ? "Show less" : "Read more"; more.setAttribute("aria-expanded", open); };
+      more.onclick = () => {
+        const expanded = more.getAttribute("aria-expanded") !== "true";
+        desc.style.maxHeight = expanded ? "none" : collapsedHeight;
+        desc.style.overflow = expanded ? "visible" : "hidden";
+        more.textContent = expanded ? "Show less" : "Read more";
+        more.setAttribute("aria-expanded", String(expanded));
+      };
     }
   }
 
