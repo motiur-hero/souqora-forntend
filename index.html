@@ -81,16 +81,118 @@ tailwind.config = { theme: { extend: {
 </header>
 
 <main>
-<!-- HERO -->
-<section class="relative isolate overflow-hidden bg-brand" aria-labelledby="hero-title">
-  <!-- EDIT: HERO BANNER IMAGE -->
-  <img src="images/banners/hero-banner.jpg" alt="Souqora shopping banner" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-40" width="1600" height="900" fetchpriority="high">
-  <div class="mx-auto max-w-7xl px-4 py-20 sm:py-28 lg:py-36">
-    <h1 id="hero-title" class="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl max-w-2xl">Shop Smarter. Live Better.</h1>
-    <p class="mt-5 max-w-xl text-lg text-teal-50">Discover quality products at great prices, all in one place.</p>
-    <a href="#shop" class="mt-8 inline-block rounded-full bg-saffron px-8 py-3.5 font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl">Shop Now</a>
+<!-- HERO BANNER SLIDER: Souqora promotional slides -->
+
+
+<section id="souqora-hero-slider" class="sq-hero-slider relative isolate overflow-hidden" aria-label="Souqora featured offers">
+  <div class="sq-hero-track" id="sq-hero-track">
+    <article class="sq-hero-slide sq-hero-slide-one" aria-label="Slide 1">
+      <img src="images/banners/hero-banner.jpg" alt="" class="sq-hero-bg" width="1600" height="900" fetchpriority="high">
+      <div class="sq-hero-shade"></div>
+      <div class="sq-hero-content mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
+        <span class="sq-hero-eyebrow">WELCOME TO SOUQORA</span>
+        <h1 id="hero-title" class="sq-hero-title">Shop Smarter.<br><span>Live Better.</span></h1>
+        <p class="sq-hero-description">Discover quality electronics, fashion, home essentials, personal care and everyday gadgets — all in one place.</p>
+        <a href="#shop" class="sq-hero-cta">Shop Now <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="sq-hero-decor" aria-hidden="true"><span>🎧</span><span>⌚</span><span>📱</span></div>
+    </article>
+    <article class="sq-hero-slide sq-hero-slide-two" aria-label="Slide 2">
+      <div class="sq-hero-content mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
+        <span class="sq-hero-eyebrow">TECH & EVERYDAY GADGETS</span>
+        <h2 class="sq-hero-title">Smart Picks for<br><span>Modern Life.</span></h2>
+        <p class="sq-hero-description">Explore useful devices, audio accessories, charging essentials and smart gadgets for work and play.</p>
+        <a href="#categories" class="sq-hero-cta">Explore Categories <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="sq-hero-decor" aria-hidden="true"><span>💻</span><span>🎮</span><span>🔊</span></div>
+    </article>
+    <article class="sq-hero-slide sq-hero-slide-three" aria-label="Slide 3">
+      <div class="sq-hero-content mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
+        <span class="sq-hero-eyebrow">STYLE • HOME • PERSONAL CARE</span>
+        <h2 class="sq-hero-title">Little Upgrades.<br><span>Big Difference.</span></h2>
+        <p class="sq-hero-description">Refresh your style, make your space feel like home and find practical essentials for every day.</p>
+        <a href="#shop" class="sq-hero-cta">Discover More <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="sq-hero-decor" aria-hidden="true"><span>👜</span><span>🏠</span><span>🧴</span></div>
+    </article>
   </div>
+  <button type="button" class="sq-hero-arrow sq-hero-prev" id="sq-hero-prev" aria-label="Previous banner">‹</button>
+  <button type="button" class="sq-hero-arrow sq-hero-next" id="sq-hero-next" aria-label="Next banner">›</button>
+  <div class="sq-hero-dots" id="sq-hero-dots" aria-label="Choose banner slide"></div>
 </section>
+
+<!-- BRAND MARQUEE: category-relevant brands; replace/remove names to match your actual stock -->
+
+<section id="souqora-brand-marquee" class="sq-brand-section mx-auto max-w-7xl px-4 py-10" aria-labelledby="sq-brand-title">
+  <div class="sq-brand-heading">
+    <div>
+      <p class="sq-brand-eyebrow">SHOP YOUR WAY</p>
+      <h2 id="sq-brand-title" class="font-display text-2xl font-bold text-ink sm:text-3xl">Explore Brands & Everyday Essentials</h2>
+      <p class="mt-2 text-sm text-slate-500">Popular names across tech, fashion, home, beauty and personal care.</p>
+    </div>
+    <span class="sq-brand-badge">STYLE · TECH · HOME · CARE</span>
+  </div>
+
+  <div class="sq-brand-lane">
+    <h3>All Brands</h3>
+    <div class="sq-brand-window"><div class="sq-brand-track">
+      <div class="sq-brand-set">
+        <span class="sq-brand-item"><b class="sq-wordmark samsung">SAMSUNG</b><small>Electronics</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark xiaomi">mi</b><small>Smart gadgets</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark jbl">JBL</b><small>Audio</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark anker">ANKER</b><small>Charging accessories</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark logitech">logitech</b><small>Tech accessories</small></span>
+       <span class="sq-brand-item"><b class="sq-wordmark garnier">GARNIER</b><small>Skin & hair care</small></span>
+	   <span class="sq-brand-item"><b class="sq-wordmark casio">CASIO</b><small>Watches</small></span>
+	    <span class="sq-brand-item"><b class="sq-wordmark braun">Braun</b><small>Home & personal care</small></span>
+		<span class="sq-brand-item"><b class="sq-wordmark ikea">IKEA</b><small>Home & decor</small></span>
+      </div>
+      <div class="sq-brand-set" aria-hidden="true">
+        <span class="sq-brand-item"><b class="sq-wordmark samsung">SAMSUNG</b><small>Electronics</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark xiaomi">mi</b><small>Smart gadgets</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark jbl">JBL</b><small>Audio</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark anker">ANKER</b><small>Charging accessories</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark logitech">logitech</b><small>Tech accessories</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark adidas">adidas</b><small>Footwear & apparel</small></span>
+		 <span class="sq-brand-item"><b class="sq-wordmark levis">Levi's</b><small>Casual fashion</small></span>
+		  <span class="sq-brand-item"><b class="sq-wordmark tefal">Tefal</b><small>Cookware</small></span>
+        
+        
+      </div>
+    </div></div>
+  </div>
+
+ 
+
+ 
+
+  <div class="sq-brand-lane">
+    <h3>Beauty, Health & Personal Care</h3>
+    <div class="sq-brand-window sq-brand-reverse"><div class="sq-brand-track">
+      <div class="sq-brand-set">
+        <span class="sq-brand-item"><b class="sq-wordmark nivea">NIVEA</b><small>Skin care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark loreal">L'ORÉAL</b><small>Beauty & cosmetics</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark dove">Dove</b><small>Personal care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark oralb">Oral-B</b><small>Oral care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark bodyshop">The Body Shop</b><small>Beauty & body care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark fitbit">Fitbit</b><small>Fitness wearables</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark gillette">Gillette</b><small>Grooming</small></span>
+      </div>
+      <div class="sq-brand-set" aria-hidden="true">
+        <span class="sq-brand-item"><b class="sq-wordmark nivea">NIVEA</b><small>Skin care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark loreal">L'ORÉAL</b><small>Beauty & cosmetics</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark garnier">GARNIER</b><small>Skin & hair care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark dove">Dove</b><small>Personal care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark oralb">Oral-B</b><small>Oral care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark bodyshop">The Body Shop</b><small>Beauty & body care</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark fitbit">Fitbit</b><small>Fitness wearables</small></span>
+        <span class="sq-brand-item"><b class="sq-wordmark gillette">Gillette</b><small>Grooming</small></span>
+      </div>
+    </div></div>
+  </div>
+  <p class="sq-brand-footnote">Brand names are shown for category inspiration only. Use logos and brand claims only where they accurately reflect products you stock and your rights to use the assets.</p>
+</section>
+<!-- BRAND MARQUEE: category-relevant brands; replace/remove names to match your actual stock END-->
 
 <!-- CATEGORY SLIDER -->
 <section id="categories" class="mx-auto max-w-7xl px-4 py-14" aria-labelledby="cat-title">
@@ -1640,6 +1742,49 @@ Space-Saving: Lightweight and portable, doesn’t take up much space 💼🚗.</
   </div>
 </div>
 <div id="toast" class="pointer-events-none fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 translate-y-6 rounded-full bg-ink px-5 py-3 text-sm font-medium text-white opacity-0 shadow-lg transition" role="status"></div>
+
+
+<script>
+/* Souqora hero banner slider: independent of the existing store/product scripts */
+(function () {
+  const root = document.getElementById('souqora-hero-slider');
+  const track = document.getElementById('sq-hero-track');
+  const dotsRoot = document.getElementById('sq-hero-dots');
+  if (!root || !track || !dotsRoot) return;
+  const slides = Array.from(track.children);
+  let current = 0, timer = null;
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'sq-hero-dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', 'Show banner ' + (i + 1));
+    dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => show(i, true));
+    dotsRoot.appendChild(dot);
+  });
+  const dots = Array.from(dotsRoot.children);
+  function show(next, resetTimer) {
+    current = (next + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === current);
+      dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+    });
+    if (resetTimer) restart();
+  }
+  function restart() {
+    window.clearInterval(timer);
+    timer = window.setInterval(() => show(current + 1, false), 5500);
+  }
+  document.getElementById('sq-hero-prev').addEventListener('click', () => show(current - 1, true));
+  document.getElementById('sq-hero-next').addEventListener('click', () => show(current + 1, true));
+  root.addEventListener('mouseenter', () => window.clearInterval(timer));
+  root.addEventListener('mouseleave', restart);
+  root.addEventListener('focusin', () => window.clearInterval(timer));
+  root.addEventListener('focusout', restart);
+  restart();
+})();
+</script>
 
 <script src="js/script.js"></script>
 
