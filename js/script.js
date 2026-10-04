@@ -85,6 +85,37 @@ async function sendOrderToGoogleSheets(orderData) {
   const track = $("#marquee"), item = $(".mq-item", track);
   for (let i = 0; i < 7; i++) track.appendChild(item.cloneNode(true));
 
+  /* ---- Hero slider: autoplay, arrows, dots, swipe; pauses on hover/focus ---- */
+  const heroTrack = $("#sq-hero-track");
+  if (heroTrack) {
+    const slides = [...heroTrack.children], dots = $("#sq-hero-dots");
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let cur = 0, timer = null, startX = null;
+    const go = (i) => {
+      cur = (i + slides.length) % slides.length;
+      heroTrack.style.transform = `translateX(-${cur * 100}%)`;
+      [...dots.children].forEach((d, k) => { d.classList.toggle("is-active", k === cur); d.setAttribute("aria-current", String(k === cur)); });
+      slides.forEach((s, k) => s.toggleAttribute("inert", k !== cur));
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const play = () => { stop(); if (!reduceMotion) timer = setInterval(() => go(cur + 1), 6000); };
+    slides.forEach((_, i) => {
+      const d = document.createElement("button"); d.type = "button"; d.setAttribute("aria-label", "Go to slide " + (i + 1));
+      d.addEventListener("click", () => { go(i); play(); }); dots.append(d);
+    });
+    $("#sq-hero-prev").addEventListener("click", () => { go(cur - 1); play(); });
+    $("#sq-hero-next").addEventListener("click", () => { go(cur + 1); play(); });
+    const box = $("#souqora-hero-slider");
+    ["mouseenter", "focusin"].forEach((e) => box.addEventListener(e, stop));
+    ["mouseleave", "focusout"].forEach((e) => box.addEventListener(e, play));
+    box.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", (e) => { if (startX === null) return; const dx = e.changedTouches[0].clientX - startX; startX = null; if (Math.abs(dx) > 50) { go(cur + (dx < 0 ? 1 : -1)); play(); } }, { passive: true });
+    const bg = slides[0].querySelector(".sq-hero-bg");  // banner file missing -> remove it so no broken-image icon shows
+    if (bg) { const drop = () => bg.remove(); bg.addEventListener("error", drop); if (bg.complete && bg.naturalWidth === 0) drop(); }
+    go(0); play();
+  }
+
+
   /* ---- Read products from the HTML ---- */
   const products = $$(".product-card").map((el) => ({
     el, id: el.dataset.id, cat: el.dataset.category,
