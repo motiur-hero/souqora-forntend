@@ -85,11 +85,37 @@ async function sendOrderToGoogleSheets(orderData) {
   const track = $("#marquee"), item = $(".mq-item", track);
   for (let i = 0; i < 7; i++) track.appendChild(item.cloneNode(true));
 
+  /* ---- Marquees driven by JavaScript, so they keep moving even when the phone/browser blocks CSS animations
+          (Reduce motion, battery saver, cached old CSS). Hold a finger on a strip to pause it. ---- */
+  document.querySelectorAll(".marquee-track, .sq-brand-track").forEach((track) => {
+    const reverse = !!track.closest(".sq-brand-reverse");           // reverse lane moves left to right
+    const seconds = () => (track.classList.contains("sq-brand-track") && innerWidth <= 640 ? 28 : 40);
+    const box = track.parentElement;
+    let x = null, last = performance.now(), paused = false;
+    track.style.animation = "none";
+    const on = (el, evs, fn) => evs.forEach((e) => el.addEventListener(e, fn, { passive: true }));
+    on(box, ["touchstart", "pointerdown"], () => { paused = true; });
+    on(box, ["touchend", "touchcancel", "pointerup", "pointercancel"], () => { paused = false; });
+    if (matchMedia("(hover: hover)").matches) { on(box, ["mouseenter"], () => { paused = true; }); on(box, ["mouseleave"], () => { paused = false; }); }
+    const tick = (t) => {
+      const dt = Math.min((t - last) / 1000, 0.1); last = t;
+      const half = track.scrollWidth / 2;
+      if (half > 0) {
+        if (x === null) x = reverse ? -half : 0;
+        if (!paused) x += (reverse ? 1 : -1) * (half / seconds()) * dt;
+        while (x <= -half) x += half;
+        while (x > 0) x -= half;
+        track.style.transform = `translate3d(${x}px,0,0)`;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+
   /* ---- Hero slider: autoplay, arrows, dots, swipe; pauses on hover/focus ---- */
   const heroTrack = $("#sq-hero-track");
   if (heroTrack) {
     const slides = [...heroTrack.children], dots = $("#sq-hero-dots");
-    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let cur = 0, timer = null, startX = null;
     const go = (i) => {
       cur = (i + slides.length) % slides.length;
@@ -98,7 +124,7 @@ async function sendOrderToGoogleSheets(orderData) {
       slides.forEach((s, k) => s.toggleAttribute("inert", k !== cur));
     };
     const stop = () => { clearInterval(timer); timer = null; };
-    const play = () => { stop(); if (!reduceMotion) timer = setInterval(() => go(cur + 1), 6000); };
+    const play = () => { stop(); timer = setInterval(() => go(cur + 1), 6000); };
     slides.forEach((_, i) => {
       const d = document.createElement("button"); d.type = "button"; d.setAttribute("aria-label", "Go to slide " + (i + 1));
       d.addEventListener("click", () => { go(i); play(); }); dots.append(d);
@@ -505,3 +531,15 @@ async function sendOrderToGoogleSheets(orderData) {
     const open = $$(".modal.is-open"); if (open.length) closeModal(open[open.length - 1]); else closeCart();
   });
 })();
+
+// lets the :active "hold to pause" rule work on iPhones
+document.addEventListener("touchstart", () => {}, { passive: true });
+
+// Add ?debug=1 to the page address to see which files the phone is really running
+if (/[?&]debug=1/.test(location.search)) {
+  const d = document.createElement("div");
+  d.style.cssText = "position:fixed;left:8px;right:8px;bottom:8px;z-index:9999;padding:8px 10px;border-radius:10px;background:#000c;color:#fff;font:12px/1.4 monospace";
+  const css = getComputedStyle(document.documentElement).getPropertyValue("--sq-version").replace(/["' ]/g, "") || "OLD style.css (not updated)";
+  d.textContent = "script.js: 2026-10-05 | style.css: " + css + " | reduce-motion: " + (matchMedia("(prefers-reduced-motion: reduce)").matches ? "ON" : "off");
+  document.body.append(d);
+}

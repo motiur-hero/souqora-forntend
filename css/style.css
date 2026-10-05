@@ -1,5 +1,5 @@
 /* Souqora custom styles (works together with Tailwind) */
-:root { --ink:#0e2a28; --brand:#0e3b38; --saffron:#e8a33d; }
+:root { --sq-version:"2026-10-05"; --ink:#0e2a28; --brand:#0e3b38; --saffron:#e8a33d; }
 body { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid #0f766e; outline-offset: 2px; }
 .no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -60,11 +60,6 @@ body { -webkit-tap-highlight-color: transparent; }
 @keyframes popIn { from { opacity:0; transform: translateY(24px) scale(.98); } to { opacity:1; transform:none; } }
 #toast.show { opacity:1; transform: translate(-50%, 0); }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
-  .marquee-track, .sq-brand-track { animation: none; }
-  [aria-label="Promotions"], .sq-brand-window { overflow-x: auto; }
-}
 
 /* Hero banner slider */
 .sq-hero-slider { background: var(--brand); color:#fff; }
@@ -91,7 +86,6 @@ body { -webkit-tap-highlight-color: transparent; }
 .sq-hero-dots { position:absolute; left:0; right:0; bottom:16px; z-index:5; display:flex; justify-content:center; gap:8px; }
 .sq-hero-dots button { width:10px; height:10px; padding:0; border-radius:9999px; border:0; background:rgba(255,255,255,.45); transition: width .25s, background .25s; }
 .sq-hero-dots button.is-active { width:28px; background: var(--saffron); }
-@media (prefers-reduced-motion: reduce) { .sq-hero-track { transition:none; } }
 
 /* Brand marquee lanes (lane 1 right-to-left, reverse lane left-to-right) */
 .sq-brand-heading { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:20px; }
@@ -112,7 +106,28 @@ body { -webkit-tap-highlight-color: transparent; }
 @media (hover: hover) { .sq-brand-window:hover .sq-brand-track { animation-play-state: paused; } }
 @media (max-width: 640px) { .sq-brand-track { animation-duration: 28s; } .sq-brand-item { min-width:140px; padding:14px 20px; } .sq-wordmark { font-size:1.15rem; } }
 
-@media (prefers-reduced-motion: reduce) { .sq-brand-track { animation: none !important; } }
 
 /* when the banner photo is showing, hide the emoji decoration so it does not sit on top of the picture */
 .sq-hero-slide:has(.sq-hero-bg) .sq-hero-decor { display:none !important; }
+
+/* Reduced-motion phones: keep the marquees and slider running (slower), only calm the popups. Hold a finger on a strip to pause it. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation-duration: 70s; }
+  .sq-brand-track { animation-duration: 80s; }
+  .modal.is-open, .modal.is-open .panel, #detail-modal.is-open #detail-body { animation: none; }
+}
+.marquee-track:active, .sq-brand-window:active .sq-brand-track { animation-play-state: paused; }
+
+/* Mobile fixes */
+@media (max-width: 480px) {
+  /* product cards: stack the two buttons so the text never wraps into 3 lines */
+  .product-card .grid.grid-cols-2 { grid-template-columns: 1fr; }
+  .product-card .grid.grid-cols-2 button { padding: 10px 8px; font-size: .9rem; white-space: nowrap; min-height: 42px; }
+  .product-card button.p-name { padding: 4px 0; }
+}
+@media (max-width: 768px) {
+  /* bigger tap areas in the footer */
+  footer li > a, footer li > button { display: inline-block; padding: 8px 0; }
+}
+.sq-hero-dots button { position: relative; }
+.sq-hero-dots button::after { content: ""; position: absolute; inset: -14px -6px; }
