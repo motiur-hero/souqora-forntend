@@ -1,0 +1,65 @@
+backend:
+  name: github
+  repo: motiur-hero/souqora-forntend
+  branch: main
+  use_graphql: true
+
+media_folder: "images/products"
+public_folder: "/images/products"
+
+collections:
+  - name: "products"
+    label: "Products"
+    description: "Add, edit, remove products and manage product images."
+    files:
+      - name: "catalog"
+        label: "Product Catalog"
+        file: "content/products.json"
+        format: "json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            label_singular: "Product"
+            allow_add: true
+            allow_remove: true
+            allow_reorder: true
+            collapsed: true
+            summary: "{{fields.name}} — {{fields.category}}"
+            fields:
+              - { label: "Product ID", name: "id", widget: "string", hint: "Use a unique ID such as beauty-09 or electronics-05." }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Top-Selling", value: "beauty" }
+                  - { label: "Electronics", value: "electronics" }
+                  - { label: "Fashion", value: "fashion" }
+                  - { label: "Home", value: "home" }
+                  - { label: "Health", value: "health" }
+                  - { label: "Accessories", value: "accessories" }
+                  - { label: "Kitchen", value: "kitchen" }
+                  - { label: "Personal Care", value: "personal-care" }
+              - { label: "Category Name", name: "category_name", widget: "string" }
+              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Main Product Image", name: "main_image", widget: "image", media_folder: "/images/products" }
+              - { label: "Hover Image", name: "hover_image", widget: "image", required: false, media_folder: "/images/products" }
+              - { label: "Price (number only)", name: "price", widget: "number", value_type: "float", min: 0 }
+              - { label: "Original Price", name: "original_price", widget: "number", value_type: "float", min: 0, required: false }
+              - { label: "Discount (%)", name: "discount", widget: "number", value_type: "float", min: 0, max: 100, required: false }
+              - { label: "Badge", name: "badge", widget: "string", required: false }
+              - { label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1, required: false }
+              - { label: "Reviews", name: "reviews", widget: "number", value_type: "int", min: 0, required: false }
+              - { label: "Star Display", name: "stars", widget: "string", default: "★★★★★", required: false }
+              - label: "Gallery Images (up to 3)"
+                name: "gallery"
+                widget: "list"
+                label_singular: "Gallery Image"
+                max: 3
+                required: false
+                field:
+                  label: "Image"
+                  name: "image"
+                  widget: "image"
+                  media_folder: "/images/products"
+              - { label: "Product Description", name: "description", widget: "text" }

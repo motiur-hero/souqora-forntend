@@ -142,19 +142,117 @@ async function sendOrderToGoogleSheets(orderData) {
   }
 
 
-  /* ---- Read products from the HTML ---- */
-  const products = $$(".product-card").map((el) => ({
+  /* ---- Product catalog ----
+     The HTML remains the safe local/offline fallback. When the site is deployed,
+     content/products.json is loaded and used as the live Decap CMS catalog.
+     This does NOT change the cart, checkout, detail page, or responsive markup. ---- */
+  const readProductsFromHtml = () => $$(".product-card").map((el) => ({
     el, id: el.dataset.id, cat: el.dataset.category,
     name: $(".p-name", el).textContent.trim(), catName: $(".p-cat", el).textContent.trim(),
     price: num($(".p-price", el).textContent), orig: num($(".p-orig", el).textContent),
     disc: $(".p-disc", el).textContent.trim(), desc: $(".p-desc", el).textContent.trim(),
     rating: $(".p-rating", el).textContent.trim(), reviews: $(".p-reviews", el).textContent.trim(),
-    stars: $("[aria-hidden]", el.querySelector("p[aria-label]")).textContent,
+    stars: $("[aria-hidden]", el.querySelector("p[aria-label]"))?.textContent || "★★★★★",
     main: $(".img-main", el).getAttribute("src"), hover: $(".img-hover", el).getAttribute("src"),
-    // Optional: add data-gallery-1, data-gallery-2 and data-gallery-3 to a product card.
     gallery: [el.getAttribute("data-gallery-1"), el.getAttribute("data-gallery-2"), el.getAttribute("data-gallery-3")].filter(Boolean),
+    badge: $(".p-badge", el)?.textContent.trim() || "",
   }));
+
+  let products = readProductsFromHtml();
   const byId = (id) => products.find((p) => p.id === id);
+
+  const normalizeCmsProduct = (raw, fallbackEl) => {
+    const fallback = fallbackEl ? readProductsFromHtml().find((p) => p.id === raw.id) : null;
+    const clean = (v, d = "") => (v === undefined || v === null ? d : String(v).trim());
+    const gallery = Array.isArray(raw.gallery) ? raw.gallery.filter(Boolean).slice(0, 3) : [];
+    const rating = Number(raw.rating);
+    const reviews = Number(raw.reviews);
+    const stars = clean(raw.stars, fallback?.stars || "★★★★★");
+    return {
+      el: fallback?.el || fallbackEl || null,
+      id: clean(raw.id, fallback?.id || ""),
+      cat: clean(raw.category, fallback?.cat || ""),
+      catName: clean(raw.category_name, fallback?.catName || clean(raw.category).replace(/-/g, " ")),
+      name: clean(raw.name, fallback?.name || "Untitled Product"),
+      price: Number(raw.price) || 0,
+      orig: Number(raw.original_price) || 0,
+      disc: clean(raw.discount, fallback?.disc || "0"),
+      desc: clean(raw.description, fallback?.desc || ""),
+      rating: Number.isFinite(rating) ? rating.toFixed(1).replace(/\.0$/, "") : (fallback?.rating || "0"),
+      reviews: Number.isFinite(reviews) ? String(Math.max(0, Math.round(reviews))) : (fallback?.reviews || "0"),
+      stars,
+      main: clean(raw.main_image, fallback?.main || ""),
+      hover: clean(raw.hover_image, fallback?.hover || raw.main_image || ""),
+      gallery,
+      badge: clean(raw.badge, fallback?.badge || ""),
+    };
+  };
+
+  const updateCard = (el, p) => {
+    el.dataset.id = p.id;
+    el.dataset.category = p.cat;
+    [1, 2, 3].forEach((n, i) => el.setAttribute(`data-gallery-${n}`, p.gallery[i] || ""));
+    const main = $(".img-main", el), hover = $(".img-hover", el);
+    if (main) { main.src = p.main; main.alt = p.name; }
+    if (hover) { hover.src = p.hover || p.main; hover.alt = p.name + " - alternate view"; }
+    const wrap = $(".img-wrap", el); if (wrap) wrap.setAttribute("aria-label", "View details: " + p.name);
+    const name = $(".p-name", el); if (name) name.textContent = p.name;
+    const cat = $(".p-cat", el); if (cat) cat.textContent = p.catName;
+    const desc = $(".p-desc", el); if (desc) desc.textContent = p.desc;
+    const rating = $(".p-rating", el); if (rating) rating.textContent = p.rating;
+    const reviews = $(".p-reviews", el); if (reviews) reviews.textContent = p.reviews;
+    const stars = $("p[aria-label] [aria-hidden]", el); if (stars) stars.textContent = p.stars;
+    const ratingRow = $("p[aria-label]", el); if (ratingRow) ratingRow.setAttribute("aria-label", "Rated " + p.rating + " out of 5");
+    const price = $(".p-price", el); if (price) price.textContent = money(p.price);
+    const orig = $(".p-orig", el); if (orig) { orig.textContent = p.orig ? money(p.orig) : ""; orig.classList.toggle("hidden", !p.orig); }
+    const disc = $(".p-disc", el); if (disc) disc.textContent = String(p.disc).replace(/[^0-9.]/g, "");
+    const discWrap = disc?.closest("span.absolute"); if (discWrap) discWrap.classList.toggle("hidden", !Number(p.disc));
+    const badge = $(".p-badge", el); if (badge) { badge.textContent = p.badge; badge.classList.toggle("hidden", !p.badge); }
+    return el;
+  };
+
+  const syncProductGrid = (catalog) => {
+    const grid = $("#product-grid"); if (!grid || !catalog.length) return;
+    const existing = new Map($$(".product-card", grid).map((el) => [el.dataset.id, el]));
+    const template = $(".product-card", grid);
+    if (!template) return;
+    const fragment = document.createDocumentFragment();
+    catalog.forEach((p) => {
+      let card = existing.get(p.id);
+      if (!card) card = template.cloneNode(true);
+      updateCard(card, p);
+      fragment.appendChild(card);
+      existing.delete(p.id);
+    });
+    existing.forEach((el) => el.remove());
+    grid.querySelectorAll(":scope > .product-card").forEach((el) => el.remove());
+    grid.appendChild(fragment);
+  };
+
+  const loadCmsCatalog = async () => {
+    try {
+      const response = await fetch("content/products.json?v=20261006", { cache: "no-store" });
+      if (!response.ok) throw new Error("Catalog HTTP " + response.status);
+      const data = await response.json();
+      if (!data || !Array.isArray(data.products)) throw new Error("Invalid product catalog");
+      const fallbackMap = new Map(readProductsFromHtml().map((p) => [p.id, p.el]));
+      const catalog = data.products
+        .map((raw) => normalizeCmsProduct(raw, fallbackMap.get(String(raw.id))))
+        .filter((p) => p.id && p.name && p.cat && p.main);
+      if (!catalog.length) throw new Error("Empty product catalog");
+      products = catalog;
+      syncProductGrid(products);
+      applyFilters();
+      cart = cart.filter((c) => byId(c.id));
+      save();
+      renderCart();
+      const startId = new URLSearchParams(location.search).get("product");
+      if (startId && byId(startId) && !detail.classList.contains("is-open")) openDetail(startId, true);
+    } catch (err) {
+      // Local file:// previews and missing CMS data safely keep the original HTML catalog.
+      console.info("Souqora CMS catalog not loaded; using HTML product data.", err.message);
+    }
+  };
 
   /* ---- Toast + modal helpers ---- */
   let toastTimer;
@@ -524,6 +622,9 @@ async function sendOrderToGoogleSheets(orderData) {
   /* ---- Open the product named in the URL (?product=ID) on load / refresh ---- */
   const startId = new URLSearchParams(location.search).get("product");
   if (startId && byId(startId)) openDetail(startId, true);
+
+  /* ---- Load Decap CMS catalog after the existing UI is ready ---- */
+  loadCmsCatalog();
 
   /* ---- Escape closes whatever is open ---- */
   document.addEventListener("keydown", (e) => {
