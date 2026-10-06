@@ -2,6 +2,7 @@ backend:
   name: github
   repo: motiur-hero/souqora-forntend
   branch: main
+  site_domain: souqora.live
   use_graphql: true
 
 media_folder: "images/products"
