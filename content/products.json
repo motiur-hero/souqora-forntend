@@ -443,17 +443,20 @@
     {
       "stars": "★★★★★",
       "discount": 20,
-      "badge": "Best Seller",
-      "price": 1490,
-      "name": "Leather Bifold Wallet",
+      "badge": "ONLY UAE",
+      "price": 90,
+      "name": "Triple Way Car Video Recorder ©",
       "category_name": "Accessories",
-      "gallery": [],
-      "main_image": "images/products/accessories/accessories-01-main.jpg",
-      "hover_image": "images/products/accessories/accessories-01-hover.jpg",
+      "gallery": [
+        "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/triple-way-car-video-recorder-960844.jpg?v=1730574745&width=800",
+        "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/triple-way-car-video-recorder-711648.jpg?v=1730574745&width=800"
+      ],
+      "main_image": "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/triple-way-car-video-recorder-940394.jpg?v=1730574745&width=800",
+      "hover_image": "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/triple-way-car-video-recorder-488719.jpg?v=1730574745&width=800",
       "reviews": 361,
       "id": "accessories-01",
-      "original_price": 1860,
-      "description": "Leather Bifold Wallet: Finishing touch with durable materials and a refined look that goes with everything.",
+      "original_price": 140,
+      "description": "Product Name:\nTriple Way Car Video Recorder\n\nFeatures:\n📹 Resolution Video: Capture clear and sharp footage with 1296p resolution, ensuring high-quality video recording during your drive.\n\n🎥 Driving Video Function: Record everything happening on the road, providing clear evidence and enhancing your driving safety.\n\n📸 Photo Mode: Switch to photo mode to capture important moments with ease, whether it’s a scenic view or an incident that requires documentation.\n\n▶️ Video Playback: Easily view recorded footage directly on the device, helping you review your journey or check any incidents.\n\n🔒 One-Key Locking Function: Protect important footage by locking files with a single button, preventing accidental deletion during your drive.\n\n🔇 One-Key Mute Function: Mute the audio quickly with one touch, allowing you to focus on visual content without background noise.\n\n🔄 Camera Interface Switching: Seamlessly switch between different camera interfaces for enhanced flexibility and better usability.\n\n⏰ Time/Date Setting: Ensure accurate timestamps for your recordings by adjusting the time and date settings according to your preferences.\n\n🚶‍♂️ Motion Detection Function: Automatically start recording when motion is detected, making it perfect for parking monitoring or capturing unexpected events.",
       "rating": 4.7,
       "category": "accessories"
     },
