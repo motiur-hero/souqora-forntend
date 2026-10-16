@@ -333,17 +333,20 @@
     {
       "stars": "★★★★★",
       "discount": 20,
-      "badge": "New",
-      "price": 1690,
-      "name": "Soft Knit Throw Blanket",
+      "badge": "UAE",
+      "price": 60,
+      "name": "Wall-Mounted Creative Home Accessories with Home",
       "category_name": "Home & Living",
-      "gallery": [],
-      "main_image": "images/products/home/home-02-main.jpg",
-      "hover_image": "images/products/home/home-02-hover.jpg",
+      "gallery": [
+        "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/wall-mounted-creative-home-accessories-with-home-9268749.jpg?v=1768321932&width=800",
+        "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/wall-mounted-creative-home-accessories-with-home-2420144.jpg?v=1768321932&width=800"
+      ],
+      "main_image": "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/wall-mounted-creative-home-accessories-with-home-5421587.jpg?v=1768321931&width=800",
+      "hover_image": "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/wall-mounted-creative-home-accessories-with-home-6569163.jpg?v=1768321931&width=800",
       "reviews": 171,
       "id": "home-02",
-      "original_price": 2110,
-      "description": "Soft Knit Throw Blanket: Adds warmth and function to any room with a clean look that suits modern homes.",
+      "original_price": 90,
+      "description": "Material: PVC\nPlace of Origin: Taizhou\nSize: Details customer service\nStyle: European\nCategory: Wall Decoration\ncolor: White\nSupport Alipay: Yes\nPackaging cartons\nItem No.: home pendant",
       "rating": 4.6,
       "category": "home"
     },
