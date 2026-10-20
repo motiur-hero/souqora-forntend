@@ -667,16 +667,20 @@
       "stars": "★★★★☆",
       "discount": 50,
       "badge": "Top Rated",
-      "price": 2890,
-      "name": "Ionic Hair Dryer",
+      "price": 90,
+      "name": "Miss Rose - 2-in-1 Compact Powder",
       "category_name": "Personal Care",
-      "gallery": [],
-      "main_image": "images/products/personal-care/personal-care-04-main.jpg",
-      "hover_image": "images/products/personal-care/personal-care-04-hover.jpg",
+      "gallery": [
+        "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/miss-rose-2-in-1-compact-powder-9740665.jpg?v=1772646551&width=800",
+        "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/miss-rose-2-in-1-compact-powder-original-4905611.jpg?v=1764155058&width=800",
+        "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/miss-rose-2-in-1-compact-powder-original-7983873.webp?v=1764155058&width=800"
+      ],
+      "main_image": "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/miss-rose-2-in-1-compact-powder-original-7539607.webp?v=1764155058&width=800",
+      "hover_image": "https://cdn.shopify.com/s/files/1/0777/4122/8329/files/miss-rose-2-in-1-compact-powder-original-1432428.jpg?v=1764155059&width=800",
       "reviews": 145,
       "id": "personal-care-04",
-      "original_price": 5780,
-      "description": "Ionic Hair Dryer: Everyday grooming essential with a comfortable feel and dependable results.",
+      "original_price": 130,
+      "description": "Miss Rose 2-in-1 Powder & Creamy Foundation – 24g\n\nOVERVIEW\n\nMiss Rose 2-in-1 Foundation combines a soft pressed powder with a creamy foundation base in one compact. The creamy formula provides smooth coverage, while the powder sets your makeup for a flawless matte finish. It helps even out skin tone, control shine, and deliver long-lasting wear — making it ideal for daily use.\n\nFEATURES\n2-in-1 compact: Powder + creamy foundation\n\nProvides medium to full coverage\n\nSmooth, blendable, and long-lasting\n\nControls oil and reduces shine\n\nEvens out skin tone and blurs imperfections\n\nLightweight, comfortable finish\n\nIdeal for touch-ups throughout the day\n\nSuitable for all skin types\n\nPRODUCT INFORMATION\nBrand: Miss Rose\n\nType: 2-Color Powder + 1-Color Cream Foundation\n\nNet Weight: 24g / 0.846 oz\n\nFinish: Matte & Natural\n\nCoverage: Medium to full\n\nSkin Types: All skin types",
       "rating": 4.2,
       "category": "personal-care"
     }
